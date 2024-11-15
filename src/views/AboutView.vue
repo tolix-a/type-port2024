@@ -72,10 +72,11 @@
       </section>
     </div>
     <div class="project">
-      <section>
+      <h1>Projects</h1>
+      <!-- <section>
         <h1>Projects</h1>
         <router-link to="/more"><img src="../assets/icon/double-right-black.svg"/></router-link>
-      </section>
+      </section> -->
       <div class="line"></div>
       <ul>
         <ProjectMap/>
@@ -90,6 +91,7 @@
         <p>email</p>
         <p>github</p>
       </article>
+      <p>ⓒ 2024 YK</p>
     </div>
   </div>
   <TopButton/>
@@ -122,7 +124,7 @@ export default {
   .box{
     // position: fixed;
     // z-index: 99;
-
+    // pointer-events: none;
   }
   .main{
     height: 100vh;
@@ -133,16 +135,16 @@ export default {
     align-items: center;
     background-color: #EAE4DA;
     h1{
-        font-size: 64px;
-        font-weight: 300;
-        padding-top: 70px;
-      }
+      font-size: 64px;
+      font-weight: 300;
+      padding-top: 70px;
+    }
     .self{
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 137px;
-      // height: 100vh;
+      height: 100vh;
       figure{
       }
       div{
@@ -170,8 +172,8 @@ export default {
     }
     >section{
       display: flex;
-      // align-items: center;
-      // justify-content: center;
+      align-items: center;
+      justify-content: center;
       flex-direction: column;
       height: 100vh;
       gap: 60px;
@@ -185,6 +187,7 @@ export default {
         p{
           font-size: 28px;
           font-weight: 300;
+          padding-bottom: 10px;
         }
       }
     }
@@ -195,6 +198,11 @@ export default {
     background-color: lavender;
     // max-width: 1440px;
     // height: 100vh;
+    h1{
+      font-size: 64px;
+      font-weight: 300;
+      padding: 70px 0;
+    }
     >section{
       max-width: 1440px;
       margin: 0 auto;
@@ -216,6 +224,10 @@ export default {
       max-width: 1440px;
       margin: 0 auto;
       padding: 100px 0;
+      display: flex;
+      flex-direction: column;
+      list-style: none;
+      gap: 100px;
     }
   }
 

@@ -40,6 +40,7 @@ time, mark, audio, video {
   height: calc(100vh - 50px);
   border: 1px solid black;
   background-color: transparent;
+  pointer-events: none;
 
   position: fixed; 
   top: 50%;

@@ -3,7 +3,17 @@
     {
       "id": "1",
       "date":"",
-      "type":"팀 프로젝트",
+      "type":"web",
+      "use":"",
+      "function":"",
+      "url":"",
+      "git":"",
+      "thumbnail":["",""]
+    },
+    {
+      "id": "1",
+      "date":"",
+      "type":"mobile",
       "use":"",
       "function":"",
       "url":"",
