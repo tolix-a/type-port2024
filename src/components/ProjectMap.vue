@@ -44,12 +44,12 @@
 </template>
 <script>
 export default {
-  
+
 }
 </script>
 <style lang="scss" scoped>
   li{
-
+    font-family: 'Inter';
     div{
       width: 500px;
       text-align: left;
@@ -66,15 +66,16 @@ export default {
       }
       p{
         font-size: 20px;
-        font-weight: 400;
+        font-weight: 300;
       }
       .button3{
         display: flex;
-        gap: 50px;
+        gap: 30px;
         align-items: center;
         margin-bottom: 20px;
         a{
-          font-size: 20px;
+          font-size: 18px;
+          font-weight: bold;
           color: black;
           &:hover{
             color: slateblue;
@@ -119,7 +120,6 @@ export default {
     padding: 20px 0;
     height: 100vh;
 
-    font-family: 'Inter';
     figure{
       img{
         width: 420px;

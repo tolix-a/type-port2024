@@ -2,15 +2,23 @@
   <div class='header'>
     <button><img src="../../public/moon_black.svg"/></button>
     <nav>
-      <button>Home</button>
-      <button>About</button>
-      <button>Projects</button>
+      <button @click="toSection('main')">Home</button>
+      <button @click="toSection('about')">About</button>
+      <button @click="toSection('project')">Projects</button>
+      <button @click="toSection('contact')">Contact</button>
     </nav>
   </div>
 </template>
 <script>
 export default {
-  
+  methods: {
+    toSection(sectionId) {
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({behavior:'smooth'});
+      }
+    }
+  }
 }
 </script>
 <style lang="scss">
@@ -20,6 +28,10 @@ export default {
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
+
+    position: fixed;
+    // left: 0;
+    top: 0;
     button{
       background-color: transparent;
       border: none;

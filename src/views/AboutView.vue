@@ -1,11 +1,11 @@
 <template>
   <!-- <div class="box">
-    <HeaderBtn/>
   </div> -->
+  <HeaderBtn/>
   <div class="home">
-    <div class="main">
+    <div class="main" id="main">
     </div>
-    <div class="about">
+    <div class="about" id="about">
       <h1>About</h1>
       <div class="self">
         <figure>
@@ -65,13 +65,11 @@
           <p>Illustrator</p>
           <p>Indesign</p>
           <p>Figma</p>
-        </div>
-        <div class="4">
           <p>Notion</p>
         </div> -->
       </section>
     </div>
-    <div class="project">
+    <div class="project" id="project">
       <h1>Projects</h1>
       <!-- <section>
         <h1>Projects</h1>
@@ -82,7 +80,7 @@
         <ProjectMap/>
       </ul>
     </div>
-    <div class="contact">
+    <div class="contact" id="contact">
       <article>
         <h2>Contact</h2>
         <img src="../../public/north-star.svg"/>
@@ -100,7 +98,7 @@
 <script>
 import ProjectMap from '@/components/ProjectMap.vue';
 import TopButton from '@/components/TopButton.vue';
-// import HeaderBtn from '@/components/HeaderBtn.vue';
+import HeaderBtn from '@/components/HeaderBtn.vue';
 
 export default {
   data () {
@@ -109,7 +107,7 @@ export default {
     }
   },
   components: {
-    TopButton,ProjectMap
+    TopButton,ProjectMap,HeaderBtn
   }
 }
 </script>
@@ -138,19 +136,21 @@ export default {
       font-size: 64px;
       font-weight: 300;
       padding-top: 70px;
+      padding-bottom: 100px;
     }
     .self{
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 137px;
-      height: 100vh;
+      // height: 100vh;
       figure{
       }
       div{
         display: flex;
         flex-direction: column;
         text-align: left;
+        font-family: "Aleo";
         h3{
           font-size: 24px;
           &:nth-of-type(2){
@@ -184,6 +184,8 @@ export default {
         text-align: center;
       }
       div{
+        // display: flex;
+        gap: 20px;
         p{
           font-size: 28px;
           font-weight: 300;

@@ -1,8 +1,10 @@
 <template>
+  <HeaderBtn/>
   <div class="detailPage">
     <button class="prev">#2</button>
     
     <div class="all">
+      <router-link to="/">go back</router-link>
       <div class="one">
         <div>
           <div class="title">
@@ -48,13 +50,22 @@
           <router-link to="/more">VIEW GITHUB</router-link>
         </h5>
       </div>
+      
     </div>
 
+    <TopButton/>
     <button class="next">#4</button>
+    
   </div>
 </template>
 <script>
+import HeaderBtn from '@/components/HeaderBtn.vue';
+import TopButton from '@/components/TopButton.vue';
+
 export default {
+  components:{
+    TopButton,HeaderBtn
+  }
 }
 </script>
 <style lang="scss" scoped>
@@ -118,6 +129,11 @@ export default {
       display: none;
     }
 
+    >a{
+      text-decoration: none;
+      color: white;
+    }
+
     .one{
       height: 100vh;
       margin: 0 auto;
@@ -143,6 +159,8 @@ export default {
           display: grid;
           grid-template-columns: 1fr 1fr;
           grid-gap: 70px;
+
+          font-family: "Aleo";
         }
       }
     }
@@ -162,6 +180,7 @@ export default {
         }
       }
       article{
+        font-family: "Aleo";
         h3{
           padding: 80px 0 20px 0;
           font-size: 28px;
