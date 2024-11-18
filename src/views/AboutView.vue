@@ -1,9 +1,10 @@
 <template>
-  <!-- <div class="box">
-  </div> -->
+  <div class="box">
+  </div>
   <HeaderBtn/>
   <div class="home">
     <div class="main" id="main">
+      <p>FRONTEND<br/>PORTFOLIO</p>
     </div>
     <div class="about" id="about">
       <h1>About</h1>
@@ -113,25 +114,35 @@ export default {
 </script>
 
 <style lang="scss">
-// .home{
-//   display: flex;
-//   flex-direction: column;
-//   // align-items: center;
-//   justify-content: center;
-// }
+.home{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
   .box{
     // position: fixed;
     // z-index: 99;
     // pointer-events: none;
   }
   .main{
-    height: 100vh;
+    width: calc(100vw - 50px);
+    height: calc(100vh - 50px);
+    // height: 100vh;
+    display: flex;
+    // justify-content: center;
+    align-items: center;
+    // background-color: black;
+    margin-top: 25px;
+    p{
+      // font-size: 156px;
+    }
   }
   .about{
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #EAE4DA;
+    // background-color: #EAE4DA;
     h1{
       font-size: 64px;
       font-weight: 300;
@@ -197,7 +208,7 @@ export default {
   .project{
     width: 100%;
     height: 100%;
-    background-color: lavender;
+    // background-color: lavender;
     // max-width: 1440px;
     // height: 100vh;
     h1{
