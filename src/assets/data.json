@@ -2,16 +2,22 @@
   "data": [
     {
       "id": "1",
-      "date":"",
       "type":"web",
-      "use":"",
-      "function":"",
-      "url":"",
-      "git":"",
-      "thumbnail":["",""]
+      "title":"해양생물연구센터",
+      "type2":"팀 프로젝트 - 반응형 리뉴얼 웹",
+      "date":"2024.07 - 2024.08 (약 1달)",
+      "skill":"HTML5 · CSS / SCSS · JavaScript · jQuery · JSON",
+      "function":"기능: 무한스크롤, 검색 쿠키 저장 및 삭제, 검색",
+      "url":"https://tolix-a.github.io/team-1/",
+      "git":"https://github.com/tolix-a/team-1",
+      "thumb":"../assets/img/e2.png",
+      "work":"담당: API 관리, Category page, Search Page",
+      "etc":"기타: KOPIS API 사용",
+      "img": ["",""],
+      "contents":""
     },
     {
-      "id": "1",
+      "id": "2",
       "date":"",
       "type":"mobile",
       "use":"",

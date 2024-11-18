@@ -15,7 +15,7 @@
       </div>
     </div>
     <figure>
-      <img src="../assets/img/거북.png"/>
+      <img src="../assets/img/e2.png"/>
     </figure>
   </li>
 
