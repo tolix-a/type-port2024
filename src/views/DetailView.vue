@@ -40,9 +40,9 @@
           <p>일반 사용자가 사용하기에 가독성을 더 높이고, 반응형으로 제작하여 모바일에서도 편하게 방문 할 수 있도록 개선</p>
         </article>
         <figure class="mobile">
-          <img src="../assets/img/eg1.svg"/>
-          <img src="../assets/img/eg1.svg"/>
-          <img src="../assets/img/eg1.svg"/>
+          <img src="../assets/img/3-1.svg"/>
+          <img src="../assets/img/3-2.svg"/>
+          <img src="../assets/img/3-3.svg"/>
         </figure>
         <figure class="web">
         </figure>
@@ -196,7 +196,7 @@ export default {
         &.mobile{
           display: grid;
           grid-template-columns: repeat(3, 1fr);
-          gap: 20px;
+          gap: 30px;
           img{
             width: 100%;
             border-radius: 10px;
@@ -208,6 +208,8 @@ export default {
           gap: 20px;
           img{
             width: 100%;
+            height: 430px;
+            object-fit: cover;
             border-radius: 10px;
           }
         }

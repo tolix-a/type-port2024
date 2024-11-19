@@ -7,24 +7,203 @@
       "type2":"팀 프로젝트 - 반응형 리뉴얼 웹",
       "date":"2024.07 - 2024.08 (약 1달)",
       "skill":"HTML5 · CSS / SCSS · JavaScript · jQuery · JSON",
-      "function":"기능: 무한스크롤, 검색 쿠키 저장 및 삭제, 검색",
+      "function":"기능: 법안 및 생물 설명 팝업, intersectionObserver를 이용한 글자 움직임",
       "url":"https://tolix-a.github.io/team-1/",
       "git":"https://github.com/tolix-a/team-1",
       "thumb":"../assets/img/e2.png",
-      "work":"담당: API 관리, Category page, Search Page",
-      "etc":"기타: KOPIS API 사용",
+      "work":"담당: 기획, 서브페이지 (연구센터 안내, 대상생물, 연구분야)",
+      "etc":"기타: 한화해양생물연구센터 웹사이트 리뉴얼",
       "img": ["",""],
-      "contents":""
+      "background":"",
+      "contents": [
+        {
+          "h3": "리뉴얼 사이트 선정 이유 및 개선사항",
+          "p": [
+            "한화에서 운영하는 해양생물 관련 사이트 중 가장 관심도가 낮은 사이트로 사용자가 적은 만큼 오래된 상태로 방치되어 노후화, 오래된 디자인이 고착되어있다는 점을 토대로 리뉴얼을 결정",
+            "한화에서 운영하는 다른 해양생물 사이트인 아쿠아플라넷 공식 사이트를 참고하여 리뉴얼 디자인을 진행",
+            "일반 사용자가 사용하기에 가독성을 더 높이고, 반응형으로 제작하여 모바일에서도 편하게 방문 할 수 있도록 개선"
+          ]
+        },
+        {
+          "h3": "트러블슈팅",
+          "p": [
+            "팝업창에 들어가는 이미지 크기가 다 달라서 동물 머리가 잘리는 현상",
+            ": 문제가 있는 팝업 클릭시 이미지 위치를 바꾸는 클래스를 추가해서 해결했습니다. 그런데 클래스 추가만 했더니 다른 동물들 머리가 보이지 않기 시작해서 팝업을 닫으면 이미지 위치를 조정하는 클래스들이 사라지게 수정했습니다.",
+            "메인페이지 보전 활동 대상 생물을 클릭하면 대상생물 페이지의 해당 동물 탭으로 이동. 그 후 다른 페이지에 갔다가 다시 대상생물에 들어가면 전체 탭이 아니라 메인페이지로 들어간 탭이 열리는 현상.",
+            ": 데이터가 출력된 후 객체의 상태를 false로 만들고 객체를 JSON 문자열로 변환해 localStorage에 저장해서 메인에서 대상생물로 이동할 때만 실행되도록 바꾸었습니다."
+          ]
+        }
+      ]
     },
     {
       "id": "2",
-      "date":"",
       "type":"mobile",
-      "use":"",
-      "function":"",
+      "title":"Account",
+      "type2":"개인 프로젝트",
+      "date":"2024.08",
+      "skill":"React, SCSS, MongoDB, axios, Zustand",
+      "function":"기능: 덧셈, 뺄셈, CRUD",
       "url":"",
       "git":"",
-      "thumbnail":["",""]
+      "thumb":"",
+      "work":"",
+      "etc":"",
+      "img": ["",""],
+      "background":"",
+      "contents": [
+        {
+          "h3": "",
+          "p": [
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "h3": "트러블슈팅",
+          "p": [
+            "",
+            "",
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "type":"mobile",
+      "title":"todos",
+      "type2":"개인 프로젝트",
+      "date":"2024.09 - 약 3일",
+      "skill":"React, SCSS, MongoDB, axios, Zustand",
+      "function":"기능: CRUD",
+      "url":"https://todos-pi-three.vercel.app/",
+      "git":"https://github.com/tolix-a/react-todos",
+      "thumb":"../assets/img/3-1.svg",
+      "work":"",
+      "etc":"",
+      "img": [
+        "../assets/img/3-1.svg",
+        "../assets/img/3-2.svg",
+        "../assets/img/3-3.svg"
+      ],
+      "background":"",
+      "contents": [
+        {
+          "h3": "기능",
+          "p": [
+            "할 일 등록",
+            "x 버튼 클릭시 삭제 / id가 다른 데이터만 필터",
+            "할 일 Active, Completed로 구분"
+          ]
+        },
+        {
+          "h3": "트러블슈팅",
+          "p": [
+            "할 일 등록 후에 할일이 지워지지 않음",
+            ": value값을 비우는 코드 추가",
+            "데이터를 추가/삭제 했을 때 갱신되지 않음",
+            ": 의존성 배열에 data 넣음",
+            "몽고디비 갱신이 안 됨",
+            "??"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "type":"mobile",
+      "title":"SEOUL,W",
+      "type2":"팀 프로젝트 - 서울시 공연 정보 웹(PWA)",
+      "date":"2024.09.30 ~ 2024.10.17 (18일)",
+      "skill":"Next.js · NextAuth.js · Vercel · Postman · Zustand",
+      "function":"기능: 무한스크롤, 검색 쿠키 저장 및 삭제, 검색",
+      "url":"https://next-seoulw-nn.vercel.app/",
+      "git":"https://github.com/tolix-a/next-seoulw",
+      "thumb":"../assets/img/eg1.svg",
+      "work":"담당: API 관리, 카테고리 & 검색 페이지",
+      "etc":"기타: KOPIS API 사용",
+      "img": [
+        "../assets/img/4-1.svg",
+        "../assets/img/4-2.svg",
+        "../assets/img/4-3.svg",
+        "../assets/img/4-4.svg",
+        "../assets/img/4-5.svg",
+        "../assets/img/4-6.svg"
+      ],
+      "background":"../assets/img/ciaran-o-brien-unsplash.jpg",
+      "contents": [
+        {
+          "h3": "공연예술통합전산망(KOPIS) API",
+          "p": [
+            "Postman으로 데이터를 확인해 보니 xml이어서 패키지를 설치해 데이터를 JSON으로 변환시킴",
+            "KOPIS에서 제공해주는 공통코드와 개발자 가이드를 참고하여 api 요청",
+            "검색, 카테고리, 디테일 페이지에서 활용할 수 있게끔 api 호출 함수 제작"
+          ]
+        },
+        {
+          "h3": "카테고리",
+          "p": [
+            "장르와 탭 별 데이터가 나오도록 연결",
+            "무한스크롤 구현"
+          ]
+        },
+        {
+          "h3": "검색",
+          "p": [
+            "최근 검색어, 최근 본 공연 쿠키 CRUD",
+            "검색 결과",
+            "무한스크롤 구현",
+            "디테일 페이지 진입시 쿠키가 저장되도록 (최근 본 공연)",
+            "컴퓨터에서 원활히 시연할 수 있도록 overflow-x 대신 swiper 사용"
+          ]
+        },
+        {
+          "h3": "트러블슈팅",
+          "p": [
+            "검색 페이지 x 버튼을 누르면 쿠키가 하나만 삭제되어야 하는데 어쩔땐 1개, 어쩔땐 전부 지워짐",
+            ": 쿠키 이름에 공백이 있어서 row.startwith로 하면 문제가 발생. row.includes로 바꿈",
+            "검색 결과 무한스크롤 로딩이 멈추지 않음",
+            ": 빈배열인지 확인하는 것에서 데이터가 존재하는지 여부로 조건을 바꿈",
+            "메인페이지를 통해 카테고리 페이지로 진입한 다음 다시 카테고리 페이지로 진입하면 기본값이 아니라 이전에 보여준 데이터가 나옴",
+            "카테고리 페이지에서 벗어나면 값이 기본값으로 초기화 되도록 함"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "type":"web",
+      "title":"Portfolio Website",
+      "type2":"개인 프로젝트 - 반응형 웹사이트",
+      "date":"2024.11 (약 18일)",
+      "skill":"TypeScript, SCSS, ",
+      "function":"기능: 탑 버튼, 다크모드, 섹션 이동",
+      "url":"https://type-port2024.vercel.app/",
+      "git":"https://github.com/tolix-a/type-port2024",
+      "thumb":"",
+      "work":"",
+      "etc":"",
+      "img": ["",""],
+      "background":"",
+      "contents": [
+        {
+          "h3": "트러블슈팅",
+          "p": [
+            "이미지에 마스크 씌웠는데 보이지 않음",
+            ": fill=black이었고 src는 안 되고 이미지는 뷰에서는 public에 넣지 않는 것이 편하다는 것을 배움 ",
+            ""
+          ]
+        },
+        {
+          "h3": "사용한 이미지",
+          "p": [
+            "펭귄",
+            "서울",
+            ""
+          ]
+        }
+      ]
     }
   ]
 }

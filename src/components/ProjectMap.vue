@@ -38,7 +38,7 @@
       </div>
     </div>
     <figure>
-      <img src="../assets/img/eg1.svg"/>
+      <img src="../assets/img/4-2.svg"/>
     </figure>
   </li>
 </template>
