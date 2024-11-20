@@ -5,6 +5,8 @@
   <div class="home">
     <div class="main" id="main">
       <p>FRONTEND<br/>PORTFOLIO</p>
+      <p>FRONTEND<br/>PORTFOLIO</p>
+      <p>FRONTEND<br/>PORTFOLIO</p>
     </div>
     <div class="about" id="about">
       <h1>About</h1>
@@ -41,8 +43,26 @@
       <section>
         <h2>skill</h2>
         <div>
-          <p>HTML5 CSS / SCSS JavaScript React jQuery Next.js Vue TypeScript</p>
-          <p>Figma Github Firebase Vercel MongoDB Photoshop Illustrator Indesign Notion</p>
+          <p>HTML5</p>
+          <p>CSS / SCSS</p>
+          <p>JavaScript</p>
+          <p>React</p>
+          <p>jQuery</p>
+          <p>Next.js</p>
+          <p>Vue.js</p>
+          <p>TypeScript</p>
+        </div>
+        <div>
+          <p>Git</p>
+          <p>Github</p>
+          <p>MongoDB</p>
+          <p>Firebase</p>
+          <p>Vercel</p>
+          <p>Photoshop</p>
+          <p>Illustrator</p>
+          <p>Indesign</p>
+          <p>Figma</p>
+          <p>Notion</p>
         </div>
         <!-- <div class="1">
           <p>HTML5</p>
@@ -90,7 +110,7 @@
         <p>email</p>
         <p>github</p>
       </article>
-      <p>ⓒ 2024 YK</p>
+      <!-- <p>ⓒ 2024 YK</p> -->
     </div>
   </div>
   <TopButton/>
@@ -120,22 +140,36 @@ export default {
   align-items: center;
   justify-content: center;
 }
-  .box{
-    // position: fixed;
-    // z-index: 99;
-    // pointer-events: none;
-  }
+
   .main{
     width: calc(100vw - 50px);
     height: calc(100vh - 50px);
-    // height: 100vh;
     display: flex;
     // justify-content: center;
     align-items: center;
     // background-color: black;
     margin-top: 25px;
+    margin-bottom: 25px;
+    overflow: hidden;
+
+    // gap: 5%;
     p{
-      // font-size: 156px;
+      font-size: 156px;
+      &:nth-of-type(1){
+        // margin-left: 50px;
+      }
+      &:nth-of-type(2){
+        rotate: 180deg;
+        align-self: baseline;
+        color: aquamarine;
+      }
+      &:nth-of-type(3){
+        transform: scaleY(-1);
+        align-self: end;
+        margin-left: -400px;
+        margin-bottom: 50px;
+        color:violet;
+      }
     }
   }
   .about{
@@ -195,10 +229,10 @@ export default {
         text-align: center;
       }
       div{
-        // display: flex;
+        display: flex;
         gap: 20px;
         p{
-          font-size: 28px;
+          font-size: 24px;
           font-weight: 300;
           padding-bottom: 10px;
         }

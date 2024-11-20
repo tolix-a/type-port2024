@@ -4,19 +4,9 @@
   <div class="detailPage">
     <button class="prev">#2</button>
     
-    <!-- <swiper
-    :direction="'vertical'"
-    :slidesPerView="1"
-    :spaceBetween="30"
-    :mousewheel="true"
-    :pagination="{
-      clickable: true,
-    }"
-    :modules="modules"
-    class="mySwiper"
-    > -->
+    <div class="all">
+      <router-link to="/">back to Home</router-link>
       <div class="one">
-        <router-link to="/">back to Home</router-link>
         <div>
           <div class="title">
             <h1>#3</h1>
@@ -50,8 +40,6 @@
           <p>한화에서 운영하는 다른 해양생물 사이트인 아쿠아플라넷 공식 사이트를 참고하여 리뉴얼 디자인을 진행</p>
           <p>일반 사용자가 사용하기에 가독성을 더 높이고, 반응형으로 제작하여 모바일에서도 편하게 방문 할 수 있도록 개선</p>
         </article>
-      </div>
-      <div class="three">
         <figure class="mobile">
           <img src="../assets/img/3-1.svg"/>
           <img src="../assets/img/3-2.svg"/>
@@ -59,31 +47,25 @@
         </figure>
         <figure class="web">
         </figure>
-      </div>
-      <div class="four">
         <h5>
           <a href="https://github.com/tolix-a/react-todos" target="_blank" rel="noopener noreferrer">VIEW GITHUB</a>
         </h5>
+        <button class="top" @click="toTop2">
+          <img src='../../public/up.svg'/>
+        </button> 
       </div>
       
-      
-    <!-- </swiper> -->
+    </div>
     
     <button class="next">#4</button>
     
   </div>
 </template>
 <script>
-import { Swiper, SwiperSlide } from 'swiper/vue';
-import 'swiper/css';
-import 'swiper/css/pagination';
-import './style.css';
-// import required modules
-import { Mousewheel, Pagination } from 'swiper/modules';
+
 export default {
   components:{
-    Swiper,
-    SwiperSlide,
+    
   }
 }
 </script>
@@ -92,7 +74,6 @@ export default {
   
   .detailPage{
     display: flex;
-    flex-direction: column;
     width: 100vw;
     height: 100vh;
     text-align: left;
@@ -124,31 +105,27 @@ export default {
         padding: 0 20px;
         background-color: transparent;
         cursor: pointer;
-        height: 5%;
-        width: 90%;
-        margin: 25px 0;
+        height: 90%;
+        margin: auto 0;
         font-size: 20px;
         color: rgba(255, 255, 255, 0.7);
-        // border: none;
+        border: none;
 
         &.prev{
-          // left: 1%;
+          left: 1%;
         }
         &.next{
-          // right: 1%;
+          right: 1%;
         }
       }
   }
 
   .all{
-    // width: 100%;
-    height: 100%;
-    overflow-x: scroll;
+    max-width: 1440px;
+
+    overflow-y: scroll;
     -ms-overflow-style: none;
     scrollbar-width: none;
-
-    display: flex;
-    flex-direction: row;
     &::-webkit-scrollbar {
       display: none;
     }
@@ -159,17 +136,16 @@ export default {
     }
 
     .one{
-      width: 100%;
-      height: 100%;
+      height: 100vh;
       margin: 0 auto;
       position: relative;
-      
+
       display: flex;
       >div{
         position: absolute;
         max-width: 50%;
-        // right: 0%;
-        // bottom: 10%;
+        right: 0%;
+        bottom: 10%;
         .title{
           h1{
             font-size: 156px;
@@ -196,9 +172,8 @@ export default {
       }
     }
     >.two{
-      width: 100%;
-      // max-width: 1440px;
-      height: 100%;
+      max-width: 1440px;
+      min-height: 100vh;
       padding-top: 100px;
       h5{
         padding: 400px 0;
@@ -225,10 +200,6 @@ export default {
           font-weight: 300;
         }
       }
-    }
-    >.three{
-      width: 100%;
-      height: 100%;
       figure{
         padding-top: 100px;
         &.mobile{
@@ -254,10 +225,16 @@ export default {
         }
       }
     }
-    >.four{
-      width: 100%;
-      height: 100%;
-    }
   }
 
+  .top{
+    // position: absolute;
+    bottom: 8%;
+    right: 5%;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 15;
+    transition: opacity 0.3s ease-in-out;
+  }
 </style>

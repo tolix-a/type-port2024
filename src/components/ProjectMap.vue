@@ -1,52 +1,39 @@
 <template>
-  <li class="web">
+  
+  <li v-for="(item, index) in data" :key="index" :class="item.type">
     <div>
-      <h3>#1 해양생물연구센터</h3>
-      <p>팀 프로젝트 - 반응형 리뉴얼 웹</p>
-      <p>2024.07 - 2024.08 (약 1달)</p>
+      <h3>{{ item.title }}</h3>
+      <p>{{ item.type2 }}</p>
+      <p>{{ item.date }}</p>
       <br/>
-      <p>HTML5 · CSS / SCSS · JavaScript · jQuery · JSON</p>
+      <p>{{ item.skill }}</p>
       <br/>
-      <p>기획, 상세페이지 제작</p>
+      <p>{{ item.work }}</p>
       <div class="button3">
         <router-link to="/more">상세보기</router-link>
-        <router-link to="/">배포링크</router-link>
-        <router-link to="/">GitHub</router-link>
+        <a :href="item.url" target="_blank" rel="noopener noreferrer">배포링크</a>
+        <a :href="item.git" target="_blank" rel="noopener noreferrer">GitHub</a>
       </div>
     </div>
     <figure>
-      <img src="../assets/img/e2.png"/>
-    </figure>
-  </li>
-
-  <li class="mobile">
-    <div>
-      <h3>#4 SEOUL,W</h3>
-      <p>서울시 공연 정보 앱 (PWA)</p>
-      <p>2024.09.30 ~ 2024.10.17 (18일)</p>
-      <br/>
-      <p>Next.js · NextAuth.js · Vercel · Github · Zustand</p>
-      <!-- <p>Next.js / NextAuth.js / Vercel / Postman / Github / Zustand / Material UI / SASS / PWA / Swiper / Axios / xml-js / SweetAlert2</p> -->
-      <!-- <p>Next.js NextAuth.js Vercel Postman Github Zustand Material UI SASS PWA Swiper Axios xml-js SweetAlert2</p> -->
-      <br/>
-      <p>API 관리, Category page, Search Page 담당</p>
-      <p>기능: 무한스크롤, 검색 쿠키 저장 및 삭제, 검색</p>
-      <div class="button3">
-        <router-link to="/more">상세보기</router-link>
-        <router-link to="/">배포링크</router-link>
-        <router-link to="/">GitHub</router-link>
-      </div>
-    </div>
-    <figure>
-      <img src="../assets/img/4-2.svg"/>
+      <img :src="item.thumb" />
     </figure>
   </li>
 </template>
-<script>
-export default {
 
+<script>
+import jsonData from '@/assets/data.json';
+
+export default {
+  data(){
+    return{
+      data: jsonData.data
+    }
+  }
 }
+console.log(jsonData.data);
 </script>
+
 <style lang="scss" scoped>
   li{
     font-family: 'Inter';
@@ -71,7 +58,7 @@ export default {
       .button3{
         display: flex;
         gap: 30px;
-        align-items: center;
+        align-items: baseline;
         margin-bottom: 20px;
         a{
           font-size: 18px;

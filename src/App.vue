@@ -1,6 +1,8 @@
 <template>
   <!-- <div class="box"></div> -->
-  <router-view/>
+  <div @contextmenu.prevent @copy.prevent>
+    <router-view/>
+  </div>
 </template>
 
 <style lang="scss">
@@ -47,6 +49,11 @@ time, mark, audio, video {
   top: 50%;
   left: 50%; 
   transform: translate(-50%, -50%);
+  z-index: 11;
+}
+.box2{
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
 }
 
 nav {
@@ -58,5 +65,12 @@ nav {
       color: #42b983;
     }
   }
+}
+
+.select{
+  user-select: none; 
+  -webkit-user-select: none; 
+  -moz-user-select: none; 
+  -ms-user-select: none; 
 }
 </style>

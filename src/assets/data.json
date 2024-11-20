@@ -10,7 +10,7 @@
       "function":"기능: 법안 및 생물 설명 팝업, intersectionObserver를 이용한 글자 움직임",
       "url":"https://tolix-a.github.io/team-1/",
       "git":"https://github.com/tolix-a/team-1",
-      "thumb":"../assets/img/e2.png",
+      "thumb":"e2.png",
       "work":"담당: 기획, 서브페이지 (연구센터 안내, 대상생물, 연구분야)",
       "etc":"기타: 한화해양생물연구센터 웹사이트 리뉴얼",
       "img": ["",""],
@@ -79,7 +79,7 @@
       "function":"기능: CRUD",
       "url":"https://todos-pi-three.vercel.app/",
       "git":"https://github.com/tolix-a/react-todos",
-      "thumb":"../assets/img/3-1.svg",
+      "thumb":"/img/e2.png",
       "work":"",
       "etc":"",
       "img": [

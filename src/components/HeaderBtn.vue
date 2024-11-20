@@ -28,7 +28,7 @@ export default {
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
-
+    z-index: 10;
     position: fixed;
     // left: 0;
     top: 0;
@@ -39,6 +39,7 @@ export default {
       img{
         width: 40px;
         height: 40px;
+        padding-left: 5px;
       }
     }
     nav{
