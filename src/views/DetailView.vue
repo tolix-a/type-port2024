@@ -1,6 +1,9 @@
 <template>
   <div class="box2"></div>
-
+  <div class="blur b1"></div>
+  <div class="blur b2"></div>
+  <div class="blur b3"></div>
+  <div class="blur b4"></div>
   <button class="btn prev" @click="prevContent">#2</button>
   <button class="btn next" @click="nextContent">#4</button>
 
@@ -34,11 +37,6 @@
           <div v-for="(content, index) in item.contents" :key="index">
             <h3 >{{content.h3}}</h3>
             <p v-for="(pa, pIndex) in content.p" :key="pIndex">{{ pa }}</p>
-            <p>한화에서 운영하는 다른 해양생물 사이트인 아쿠아플라넷 공식 사이트를 참고하여 리뉴얼 디자인을 진행</p>
-            <p>일반 사용자가 사용하기에 가독성을 더 높이고, 반응형으로 제작하여 모바일에서도 편하게 방문 할 수 있도록 개선</p>
-
-            <h3>트러블슈팅</h3>
-            <p>x 버튼을 누르면 하나만 삭제되어야 하는데 쿠키가 어쩔땐 1개, 어쩔땐 전부 지워짐</p>
           </div>
           
         </article>
@@ -107,6 +105,33 @@ export default {
     bottom: 25px;
   }
 
+  .blur{
+    position: fixed;
+    z-index: 99;
+    backdrop-filter: blur(10px);
+    // background-color: #ffffff56;
+  }
+  .b1{
+    width: 100vw;
+    height: 25px;
+    top: 0;
+  }
+  .b2{
+    height: 100vh;
+    width: 25px;
+    right: 0;
+  }
+  .b3{
+    width: 100vw;
+    height: 25px;
+    bottom: 0;
+  }
+  .b4{
+    height: 100vh;
+    width: 25px;
+    left: 0;
+  }
+  
   .btn{
     display:inline-block;
     padding: 0 20px;
@@ -116,7 +141,7 @@ export default {
     margin: auto 0;
     font-size: 20px;
     // color: rgba(255, 255, 255, 0.7);
-    color: black;
+    color: rgba(0, 0, 0, 0.5);
     border: none;
     position: fixed;
     top: 5%;
@@ -127,6 +152,7 @@ export default {
       right: 1%;
     }
   }
+  
 
   .detailPage{
     display: flex;

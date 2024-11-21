@@ -30,15 +30,15 @@ export default {
     justify-content: space-between;
     z-index: 10;
     position: fixed;
-    // left: 0;
+    left: 10px;
     top: 0;
     button{
       background-color: transparent;
       border: none;
       cursor: pointer;
       img{
-        width: 40px;
-        height: 40px;
+        width: 20px;
+        height: 20px;
         padding-left: 5px;
       }
     }
