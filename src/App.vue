@@ -8,6 +8,7 @@
 <style lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import '/src/style/mixins';
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -29,13 +30,14 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
-
 #app {
   font-family: "Aleo", serif, "Inter", sans-serif, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
 }
+
+
 
 .box{
   width: calc(100vw - 50px);
@@ -50,10 +52,9 @@ time, mark, audio, video {
   left: 50%; 
   transform: translate(-50%, -50%);
   z-index: 11;
-}
-.box2{
-  border-top: 1px solid white;
-  border-bottom: 1px solid white;
+  @include res('mobile'){
+    display: none;
+  }
 }
 
 nav {

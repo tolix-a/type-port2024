@@ -1,0 +1,22 @@
+$mobile:767px;
+$tablet:768px;
+$pc:1200px;
+
+@mixin res($device){
+    @if($device == 'mobile'){
+        @media(max-width:$mobile){
+            @content;
+        }        
+    }
+    @else if($device == 'tablet'){
+        @media (min-width:$tablet) and (max-width:$pc){
+            @content;
+        }  
+    }
+    @else{
+        @media (min-width:$pc){
+            @content;
+        }  
+    }
+}
+@include res('mobile'){}

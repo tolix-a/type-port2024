@@ -1,37 +1,28 @@
 <template>
-  <div class="box box2">
-  </div>
-  <div class="detailPage">
-    <button class="prev">#2</button>
-    
-    <!-- <swiper
-    :direction="'vertical'"
-    :slidesPerView="1"
-    :spaceBetween="30"
-    :mousewheel="true"
-    :pagination="{
-      clickable: true,
-    }"
-    :modules="modules"
-    class="mySwiper"
-    > -->
+  <div class="box2"></div>
+
+  <button class="btn prev" @click="prevContent">#2</button>
+  <button class="btn next" @click="nextContent">#4</button>
+
+  <div class="detailPage">  
+    <div class="all">
+      <!-- <router-link to="/">back to Home</router-link> -->
       <div class="one">
-        <router-link to="/">back to Home</router-link>
         <div>
           <div class="title">
-            <h1>#3</h1>
-            <h2>SEOUL,W</h2>
+            <h1>#{{ item.id }}</h1>
+            <h2>{{item.title}}</h2>
           </div>
           <section>
             <div>
-              <p>팀 프로젝트 (4인) - 모바일 앱 PWA</p>
-              <p>2024.09.30 ~ 2024.10.17 (18일)</p>
-              <p>Next.js NextAuth.js Vercel Postman Github Zustand Material UI SASS PWA Swiper Axios xml-js SweetAlert2</p>
+              <p>{{item.type2}}</p>
+              <p>{{item.date}}</p>
+              <p>{{item.skill}}</p>
             </div>
             <div>
-              <p>담당: API 관리, Category page, Search Page</p>
-              <p>기능: 무한스크롤, 검색 쿠키 저장 및 삭제, 검색</p>
-              <p>기타: KOPIS API 사용</p>
+              <p>{{item.work}}</p>
+              <p>{{item.function}}</p>
+              <p>{{item.etc}}</p>
               <br/>
             </div>
           </section>
@@ -40,153 +31,186 @@
 
       <div class="two">
         <article>
-          <h3>리뉴얼 사이트 선정 이유 및 개선사항</h3>
-          <p>한화에서 운영하는 해양생물 관련 사이트 중 가장 관심도가 낮은 사이트로 사용자가 적은 만큼 오래된 상태로 방치되어 노후화, 오래된 디자인이 고착되어있다는 점을 토대로 리뉴얼을 결정</p>
-          <p>한화에서 운영하는 다른 해양생물 사이트인 아쿠아플라넷 공식 사이트를 참고하여 리뉴얼 디자인을 진행</p>
-          <p>일반 사용자가 사용하기에 가독성을 더 높이고, 반응형으로 제작하여 모바일에서도 편하게 방문 할 수 있도록 개선</p>
+          <div v-for="(content, index) in item.contents" :key="index">
+            <h3 >{{content.h3}}</h3>
+            <p v-for="(pa, pIndex) in content.p" :key="pIndex">{{ pa }}</p>
+            <p>한화에서 운영하는 다른 해양생물 사이트인 아쿠아플라넷 공식 사이트를 참고하여 리뉴얼 디자인을 진행</p>
+            <p>일반 사용자가 사용하기에 가독성을 더 높이고, 반응형으로 제작하여 모바일에서도 편하게 방문 할 수 있도록 개선</p>
 
-          <h3>트러블슈팅</h3>
-          <p>x 버튼을 누르면 하나만 삭제되어야 하는데 쿠키가 어쩔땐 1개, 어쩔땐 전부 지워짐</p>
-          <p>한화에서 운영하는 다른 해양생물 사이트인 아쿠아플라넷 공식 사이트를 참고하여 리뉴얼 디자인을 진행</p>
-          <p>일반 사용자가 사용하기에 가독성을 더 높이고, 반응형으로 제작하여 모바일에서도 편하게 방문 할 수 있도록 개선</p>
+            <h3>트러블슈팅</h3>
+            <p>x 버튼을 누르면 하나만 삭제되어야 하는데 쿠키가 어쩔땐 1개, 어쩔땐 전부 지워짐</p>
+          </div>
+          
         </article>
-      </div>
-      <div class="three">
-        <figure class="mobile">
-          <img src="../assets/img/3-1.svg"/>
-          <img src="../assets/img/3-2.svg"/>
-          <img src="../assets/img/3-3.svg"/>
+        <!-- 이미지 없으면 에러남 -->
+        <figure :class="item.type">
+          <img v-for="(image,index) in item.img" :key="index" :src="require(`@/assets/img/${image}`)"/>
         </figure>
-        <figure class="web">
-        </figure>
-      </div>
-      <div class="four">
         <h5>
-          <a href="https://github.com/tolix-a/react-todos" target="_blank" rel="noopener noreferrer">VIEW GITHUB</a>
+          <a :href="item.git" target="_blank" rel="noopener noreferrer">VIEW GITHUB</a>
         </h5>
       </div>
       
-      
-    <!-- </swiper> -->
-    
-    <button class="next">#4</button>
-    
+    </div>
   </div>
+  <TopButton/>
 </template>
+
 <script>
-import { Swiper, SwiperSlide } from 'swiper/vue';
-import 'swiper/css';
-import 'swiper/css/pagination';
-import './style.css';
-// import required modules
-import { Mousewheel, Pagination } from 'swiper/modules';
+import TopButton from '@/components/TopButton.vue';
+import jsonData from '@/assets/data.json';
+
 export default {
+  data() {
+    return {
+      item: {},
+      data: jsonData.data
+    };
+  },
   components:{
-    Swiper,
-    SwiperSlide,
+    TopButton
+  },
+  computed: {
+
+  },
+  methods: {
+    loadData() {
+      const id = this.$route.params.id;
+      this.item = this.data.find(item => item.id === id);
+    }
+  },
+  mounted() {
+    this.loadData()
+    console.log(this.item.date)
+
+    window.scrollTo(0, 0);
   }
 }
 </script>
+
 <style lang="scss" scoped>
 @import url('https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Zilla+Slab+Highlight:wght@400;700&display=swap');
   
+  .box2{
+    border: 1px solid black;
+    // border-top: 1px solid black;
+    // border-bottom: 1px solid black;
+    background-color: transparent;
+    pointer-events: none;
+
+    position: fixed; 
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    top: 25px;
+    left: 25px;
+    right: 25px;
+    bottom: 25px;
+  }
+
+  .btn{
+    display:inline-block;
+    padding: 0 20px;
+    background-color: transparent;
+    cursor: pointer;
+    height: 90%;
+    margin: auto 0;
+    font-size: 20px;
+    // color: rgba(255, 255, 255, 0.7);
+    color: black;
+    border: none;
+    position: fixed;
+    top: 5%;
+    &.prev{
+      left: 1%;
+    }
+    &.next{
+      right: 1%;
+    }
+  }
+
   .detailPage{
     display: flex;
-    flex-direction: column;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     text-align: left;
-
-    background-image: url(../assets/img/ciaran-o-brien-unsplash.jpg);
+    background-color: yellowgreen;
+    // background-image: url(../assets/img/ciaran-o-brien-unsplash.jpg);
     background-size: cover;
     background-position: center;
 
-    position: fixed;
-    justify-content: space-between;
-    &::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.5);
-        mix-blend-mode: multiply;
-        z-index: 1;
-      }
-      > * {
-        position: relative;
-        z-index: 2;
-        color: white;
-      }
-      button{
-        display:inline-block;
-        padding: 0 20px;
-        background-color: transparent;
-        cursor: pointer;
-        height: 5%;
-        width: 90%;
-        margin: 25px 0;
-        font-size: 20px;
-        color: rgba(255, 255, 255, 0.7);
-        // border: none;
-
-        &.prev{
-          // left: 1%;
-        }
-        &.next{
-          // right: 1%;
-        }
-      }
+    // position: fixed;
+    justify-content: center;
+    // &::before {
+    //     content: "";
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    //     width: 100%;
+    //     height: 100%;
+    //     background: rgba(0, 0, 0, 0.5);
+    //     mix-blend-mode: multiply;
+    //     z-index: 1;
+    //   }
+    //   .one {
+    //     position: relative;
+    //     z-index: 2;
+    //     color: white;
+    //     // color: black;
+    //   }
+      
   }
 
   .all{
-    // width: 100%;
-    height: 100%;
-    overflow-x: scroll;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-
-    display: flex;
-    flex-direction: row;
-    &::-webkit-scrollbar {
-      display: none;
-    }
+    max-width: 1440px;
+    
+    // overflow-y: scroll;
+    // -ms-overflow-style: none;
+    // scrollbar-width: none;
+    // &::-webkit-scrollbar {
+    //   display: none;
+    // }
 
     >a{
       text-decoration: none;
-      color: white;
+      color: black;
     }
 
     .one{
-      width: 100%;
-      height: 100%;
-      margin: 0 auto;
-      position: relative;
-      
+      height: 100vh;
+      // position: relative;
+
       display: flex;
+      justify-content: center;
+      align-items: center;
       >div{
-        position: absolute;
-        max-width: 50%;
-        // right: 0%;
-        // bottom: 10%;
+        // position: absolute;
+        max-width: 60%;
         .title{
+          font-family: "Inter";
           h1{
             font-size: 156px;
             line-height: 1;
+            font-weight: bold;
+            color: rgba(0, 0, 0, 0.7);
           }
           h2{
             font-size: 156px;
+            font-weight: bold;
             line-height: 1.1;
+            overflow-wrap: break-word
           }
         }
         >section{
+          // width: 100%;
           display: grid;
           grid-template-columns: 1fr 1fr;
           grid-gap: 50px;
           // font-size: 18px;
           font-weight: 400;
           font-family: "Aleo";
+          border-top: 1px solid black;
+          margin-top: 2px;
+          padding-top: 20px;
           p{
             &:nth-of-type(2){
               padding: 10px 0;
@@ -196,10 +220,9 @@ export default {
       }
     }
     >.two{
-      width: 100%;
-      // max-width: 1440px;
-      height: 100%;
-      padding-top: 100px;
+      max-width: 1440px;
+      min-height: 100vh;
+      padding-top: 50px;
       h5{
         padding: 400px 0;
         text-align: center;
@@ -209,7 +232,8 @@ export default {
 
         a{
           text-decoration: underline;
-          color: white;
+          // color: white;
+          color: black;
         }
       }
       article{
@@ -225,10 +249,6 @@ export default {
           font-weight: 300;
         }
       }
-    }
-    >.three{
-      width: 100%;
-      height: 100%;
       figure{
         padding-top: 100px;
         &.mobile{
@@ -239,6 +259,7 @@ export default {
             height: 600px;
             object-fit: cover;
             border-radius: 10px;
+            border: 1px solid black;
           }
         }
         &.web{
@@ -250,14 +271,21 @@ export default {
             height: 430px;
             object-fit: cover;
             border-radius: 10px;
+            border: 1px solid black;
           }
         }
       }
     }
-    >.four{
-      width: 100%;
-      height: 100%;
-    }
   }
 
+  .top{
+    // position: absolute;
+    bottom: 8%;
+    right: 5%;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 15;
+    transition: opacity 0.3s ease-in-out;
+  }
 </style>

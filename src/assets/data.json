@@ -10,10 +10,16 @@
       "function":"기능: 법안 및 생물 설명 팝업, intersectionObserver를 이용한 글자 움직임",
       "url":"https://tolix-a.github.io/team-1/",
       "git":"https://github.com/tolix-a/team-1",
-      "thumb":"e2.png",
+      "thumb":"img/e2.png",
       "work":"담당: 기획, 서브페이지 (연구센터 안내, 대상생물, 연구분야)",
       "etc":"기타: 한화해양생물연구센터 웹사이트 리뉴얼",
-      "img": ["",""],
+      "img": [
+        "1-1.png",
+        "1-3.svg",
+        "1-4.svg",
+        "1-5.svg",
+        "1-6.svg"
+      ],
       "background":"",
       "contents": [
         {
@@ -48,11 +54,13 @@
       "thumb":"",
       "work":"",
       "etc":"",
-      "img": ["",""],
+      "img": [
+        "penguin.jpg"
+      ],
       "background":"",
       "contents": [
         {
-          "h3": "",
+          "h3": "하나",
           "p": [
             "",
             "",
@@ -79,13 +87,13 @@
       "function":"기능: CRUD",
       "url":"https://todos-pi-three.vercel.app/",
       "git":"https://github.com/tolix-a/react-todos",
-      "thumb":"/img/e2.png",
+      "thumb":"/img/3-1.svg",
       "work":"",
       "etc":"",
       "img": [
-        "../assets/img/3-1.svg",
-        "../assets/img/3-2.svg",
-        "../assets/img/3-3.svg"
+        "3-1.svg",
+        "3-2.svg",
+        "3-3.svg"
       ],
       "background":"",
       "contents": [
@@ -120,16 +128,16 @@
       "function":"기능: 무한스크롤, 검색 쿠키 저장 및 삭제, 검색",
       "url":"https://next-seoulw-nn.vercel.app/",
       "git":"https://github.com/tolix-a/next-seoulw",
-      "thumb":"../assets/img/eg1.svg",
+      "thumb":"/img/4-2.svg",
       "work":"담당: API 관리, 카테고리 & 검색 페이지",
       "etc":"기타: KOPIS API 사용",
       "img": [
-        "../assets/img/4-1.svg",
-        "../assets/img/4-2.svg",
-        "../assets/img/4-3.svg",
-        "../assets/img/4-4.svg",
-        "../assets/img/4-5.svg",
-        "../assets/img/4-6.svg"
+        "4-1.svg",
+        "4-2.svg",
+        "4-3.svg",
+        "4-4.svg",
+        "4-5.svg",
+        "4-6.svg"
       ],
       "background":"../assets/img/ciaran-o-brien-unsplash.jpg",
       "contents": [
@@ -184,7 +192,9 @@
       "thumb":"",
       "work":"",
       "etc":"",
-      "img": ["",""],
+      "img": [
+        "penguin.jpg"
+      ],
       "background":"",
       "contents": [
         {

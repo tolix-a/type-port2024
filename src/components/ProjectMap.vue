@@ -10,7 +10,7 @@
       <br/>
       <p>{{ item.work }}</p>
       <div class="button3">
-        <router-link to="/more">상세보기</router-link>
+        <router-link :to="{name:'Detail', params:{id:item.id}}">상세보기</router-link>
         <a :href="item.url" target="_blank" rel="noopener noreferrer">배포링크</a>
         <a :href="item.git" target="_blank" rel="noopener noreferrer">GitHub</a>
       </div>

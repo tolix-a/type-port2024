@@ -2,8 +2,8 @@
   <div class="box">
   </div>
   <HeaderBtn/>
-  <div class="home">
-    <div class="main" id="main">
+  <div class="home" id="main">
+    <div class="main">
       <p>FRONTEND<br/>PORTFOLIO</p>
       <p>FRONTEND<br/>PORTFOLIO</p>
       <p>FRONTEND<br/>PORTFOLIO</p>
@@ -27,9 +27,9 @@
           </svg>
         </figure>
         <div>
-          <h3>안녕하세요</h3>
+          <h3>안녕하세요!</h3>
           <h4>새로운 것에 도전하는 것을 좋아하는</h4>
-          <h3>신입 프론트엔드 네모네모입니다</h3>
+          <h3>신입 프론트엔드 네모네모입니다.</h3>
           <h5>웹 개발의 매력에 빠져 다양한 기술을 배우고 있으며<br/>
             사용자에게 즐거운 경험을 제공하는 웹사이트를 만들고자 노력하고 있습니다.
           </h5>
@@ -107,10 +107,10 @@
         <img src="../../public/north-star.svg"/>
         <div class="line"></div>
         <img src="../../public/star-tv.svg"/>
-        <p>email</p>
-        <p>github</p>
+        <p><a href="mailto:apple@gmail.com">email</a></p>
+        <p><a href="https://github.com/" target="_blank" rel="noopener noreferrer">github</a></p>
       </article>
-      <!-- <p>ⓒ 2024 YK</p> -->
+      <!-- <p>ⓒ 2024 YK All Rights Reserved</p> -->
     </div>
   </div>
   <TopButton/>
@@ -134,6 +134,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import '/src/style/mixins';
+
 .home{
   display: flex;
   flex-direction: column;
@@ -155,6 +157,13 @@ export default {
     // gap: 5%;
     p{
       font-size: 156px;
+      @include res('tablet'){
+        font-size: 84px;
+      }
+      @include res('mobile'){
+        font-size: 60px;
+      }
+
       &:nth-of-type(1){
         // margin-left: 50px;
       }
@@ -307,6 +316,9 @@ export default {
         text-decoration: underline;
         &:nth-of-type(1){
           margin: 110px 0 38px 0;
+        }
+        a{
+          color: black;
         }
       }
     }
