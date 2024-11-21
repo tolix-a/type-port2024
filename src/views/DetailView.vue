@@ -99,7 +99,7 @@ export default {
     pointer-events: none;
 
     position: fixed; 
-    transform: translate(-50%, -50%);
+    
     z-index: 1;
     top: 25px;
     left: 25px;
