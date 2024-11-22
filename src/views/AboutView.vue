@@ -5,8 +5,8 @@
   <div class="home" id="main">
     <div class="main">
       <p>FRONTEND<br/>PORTFOLIO</p>
-      <p>FRONTEND<br/>PORTFOLIO</p>
-      <p>FRONTEND<br/>PORTFOLIO</p>
+      <!-- <p>FRONTEND<br/>PORTFOLIO</p>
+      <p>FRONTEND<br/>PORTFOLIO</p> -->
     </div>
     <div class="about" id="about">
       <h1>About</h1>
