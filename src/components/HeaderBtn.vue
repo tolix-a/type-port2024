@@ -24,7 +24,7 @@ export default {
 <style lang="scss">
   .header{
     width: calc(100vw - 50px);
-    // background-color: red;
+    background-color: white;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;

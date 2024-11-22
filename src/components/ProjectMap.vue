@@ -37,6 +37,7 @@ console.log(jsonData.data);
 <style lang="scss" scoped>
   li{
     font-family: 'Inter';
+    width: 100%;
     div{
       width: 500px;
       text-align: left;
@@ -96,7 +97,12 @@ console.log(jsonData.data);
   }
 
   .web {
-
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+    padding: 20px 0;
   }
   .mobile{
     display: flex;
@@ -105,7 +111,6 @@ console.log(jsonData.data);
     justify-content: center;
     gap: 100px;
     padding: 20px 0;
-    height: 100vh;
 
     figure{
       img{

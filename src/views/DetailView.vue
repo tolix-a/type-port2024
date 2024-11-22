@@ -13,7 +13,9 @@
   </router-link>
   <!-- <button class="btn prev" @click="nextContent">#2</button>
     <button class="btn next" @click="nextContent">#4</button> -->
-  <router-link to="/" class="back">back to Home</router-link>
+  <router-link to="/" class="back">
+    <img src="../assets/icon/home-black.svg"/>
+  </router-link>
 
   <div class="detailPage" :style="{ backgroundColor: item.background }">
     <div :class="['all',{active:ani}]">
@@ -21,14 +23,16 @@
         <div>
           <div class="title">
             <h1>#{{ item.id }}</h1>
-            <h2>{{item.title}}</h2>
+            <a :href="item.url" target="_blank" rel="noopener noreferrer">
+              <h2>{{item.title}}</h2>
+            </a>
           </div>
           <section>
             <div>
               <p>{{item.type2}}</p>
               <p>{{item.date}}</p>
               <p>{{item.skill}}</p>
-              <a :href="item.url" target="_blank" rel="noopener noreferrer">{{item.url}}</a>
+              <a :href="item.git" target="_blank" rel="noopener noreferrer">{{item.git}}</a>
             </div>
             <div>
               <p>{{item.function}}</p>
@@ -50,9 +54,9 @@
         <figure :class="item.type">
           <img v-for="(image,index) in item.img" :key="index" :src="require(`@/assets/img/${image}`)"/>
         </figure>
-        <h5>
+        <!-- <h5>
           <a :href="item.git" target="_blank" rel="noopener noreferrer">VIEW GITHUB</a>
-        </h5>
+        </h5> -->
       </div>
   
     </div>
@@ -178,16 +182,16 @@ export default {
     padding: 0 20px;
     background-color: transparent;
     cursor: pointer;
-    height: 90%;
+    height: 80%;
     margin: auto 0;
     font-size: 20px;
     // color: rgba(255, 255, 255, 0.7);
     color: rgba(0, 0, 0, 0.5);
-    border: none;
     position: fixed;
-    top: 5%;
+    top: 10%;
     z-index: 2;
     text-decoration: none;
+    // border: 1px solid black;
     &.prev{
       left: 1%;
     }
@@ -203,9 +207,12 @@ export default {
       text-decoration: none;
       color: black;
       position: fixed;
-      top: 20%;
+      top: 3.5%;
       right: 2%;
       z-index: 10;
+      img{
+        width: 30px;
+      }
     }
 
   .detailPage{
@@ -266,6 +273,10 @@ export default {
             line-height: 1;
             font-weight: bold;
             color: rgba(0, 0, 0, 0.8);
+          }
+          a{
+            text-decoration: none;
+            color: black;
           }
           h2{
             font-size: 156px;
@@ -333,6 +344,7 @@ export default {
       }
       figure{
         padding-top: 100px;
+        padding-bottom: 150px;
         &.mobile{
           display: grid;
           grid-template-columns: repeat(3, 1fr);

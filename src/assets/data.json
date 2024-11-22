@@ -52,7 +52,7 @@
       "url":"",
       "git":"",
       "thumb":"",
-      "work":"기여도: 100",
+      "work":"",
       "etc":"",
       "img": [
         "penguin.jpg"
@@ -88,7 +88,7 @@
       "url":"https://todos-pi-three.vercel.app/",
       "git":"https://github.com/tolix-a/react-todos",
       "thumb":"/img/3-1.svg",
-      "work":"기여도: 100",
+      "work":"",
       "etc":"",
       "img": [
         "3-1.svg",
@@ -189,8 +189,8 @@
       "function":"기능: 탑 버튼, 다크모드, 섹션 이동",
       "url":"https://type-port2024.vercel.app/",
       "git":"https://github.com/tolix-a/type-port2024",
-      "thumb":"",
-      "work":"기여도: 100",
+      "thumb":"img/e2.png",
+      "work":"",
       "etc":"",
       "img": [
         "penguin.jpg"
