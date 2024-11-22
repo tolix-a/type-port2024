@@ -34,7 +34,6 @@
               <p>{{item.function}}</p>
               <p>{{item.work}}</p>
               <p>{{item.etc}}</p>
-              <br/>
             </div>
           </section>
         </div>
@@ -205,7 +204,7 @@ export default {
       color: black;
       position: fixed;
       top: 20%;
-      right: 10%;
+      right: 2%;
       z-index: 10;
     }
 
@@ -291,11 +290,10 @@ export default {
               padding: 10px 0;
             }
           }
-          div{
-
-            a{
-              margin-top: 10px;
-            }
+          a{
+            display: inline-block;
+            margin-top: 10px;
+            text-decoration:none;
           }
         }
       }
