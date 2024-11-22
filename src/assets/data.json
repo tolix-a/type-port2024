@@ -20,7 +20,7 @@
         "1-5.svg",
         "1-6.svg"
       ],
-      "background":"",
+      "background":"#189DA9",
       "contents": [
         {
           "h3": "리뉴얼 사이트 선정 이유 및 개선사항",
@@ -52,12 +52,12 @@
       "url":"",
       "git":"",
       "thumb":"",
-      "work":"",
+      "work":"기여도: 100",
       "etc":"",
       "img": [
         "penguin.jpg"
       ],
-      "background":"",
+      "background":"yellowgreen",
       "contents": [
         {
           "h3": "하나",
@@ -88,7 +88,7 @@
       "url":"https://todos-pi-three.vercel.app/",
       "git":"https://github.com/tolix-a/react-todos",
       "thumb":"/img/3-1.svg",
-      "work":"",
+      "work":"기여도: 100",
       "etc":"",
       "img": [
         "3-1.svg",
@@ -139,7 +139,7 @@
         "4-5.svg",
         "4-6.svg"
       ],
-      "background":"../assets/img/ciaran-o-brien-unsplash.jpg",
+      "background":"#FF4B77",
       "contents": [
         {
           "h3": "공연예술통합전산망(KOPIS) API",
@@ -190,12 +190,12 @@
       "url":"https://type-port2024.vercel.app/",
       "git":"https://github.com/tolix-a/type-port2024",
       "thumb":"",
-      "work":"",
+      "work":"기여도: 100",
       "etc":"",
       "img": [
         "penguin.jpg"
       ],
-      "background":"",
+      "background":"#8A7CE9",
       "contents": [
         {
           "h3": "트러블슈팅",
