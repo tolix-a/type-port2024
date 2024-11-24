@@ -78,6 +78,10 @@
         <router-link to="/more"><img src="../assets/icon/double-right-black.svg"/></router-link>
       </section> -->
       <div class="line"></div>
+      <div class="ptype">
+        <button>Team</button> |
+        <button>Personal</button>
+      </div>
       <ul>
         <ProjectMap/>
       </ul>
@@ -91,7 +95,7 @@
         <p>email <a href="mailto:apple@gmail.com">@gmail.com</a></p>
         <p><a href="https://github.com/" target="_blank" rel="noopener noreferrer">github</a></p>
       </article>
-      <!-- <p>ⓒ 2024 YK All Rights Reserved</p> -->
+      <p>ⓒ 2024 YK All Rights Reserved</p>
     </div>
   </div>
   <TopButton/>
@@ -122,6 +126,7 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 0 25px;
 }
 
   .main{
@@ -167,7 +172,11 @@ export default {
     flex-direction: column;
     align-items: center;
     height: 100vh;
-    // background-color: #EAE4DA;
+    @include res('mobile'){
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
     h1{
       font-size: 64px;
       font-weight: 300;
@@ -199,12 +208,23 @@ export default {
           h3{
             font-size: 24px;
             padding: 5px 0 20px 0;
+            @include res('mobile'){
+              font-size: 20px;
+              br{
+                display: none;
+              }
+            }
           }
           h5{
             line-height: 28px;
             padding-bottom: 20px;
             &:nth-of-type(1){
               padding-bottom: 0;
+            }
+            @include res('mobile'){
+              br{
+                display: none;
+              }
             }
           }
         }
@@ -263,6 +283,15 @@ export default {
       border-bottom: 1px solid black;
       margin: 0 auto;
     }
+    .ptype{
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding-top: 20px;
+      button{
+        border: none;
+      }
+    }
     ul{
       max-width: 1440px;
       margin: 0 auto;
@@ -271,6 +300,10 @@ export default {
       flex-direction: column;
       list-style: none;
       gap: 100px;
+      align-items: center;
+      @include res('mobile'){
+          padding: 10px;
+        }
     }
   }
 

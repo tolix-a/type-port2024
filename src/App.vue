@@ -42,7 +42,7 @@ time, mark, audio, video {
 .box{
   width: calc(100vw - 50px);
   height: calc(100vh - 50px);
-  border-top: 1px solid black;
+  // border-top: 1px solid black;
   border-bottom: 1px solid black;
   background-color: transparent;
   pointer-events: none;

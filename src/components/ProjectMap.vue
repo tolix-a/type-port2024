@@ -35,11 +35,30 @@ console.log(jsonData.data);
 </script>
 
 <style lang="scss" scoped>
+@import '/src/style/mixins';
+
   li{
     font-family: 'Inter';
-    width: 100%;
+    // width: 100%;
+    width: 80%;
+    height: 500px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    // flex-wrap: wrap;
+    gap: 100px;
+    padding: 20px 0;
+    @include res('mobile'){
+      flex-wrap: wrap;
+      width: 100%;
+      height: 100%;
+      gap: 0;
+    }
     div{
-      width: 500px;
+      width: 100%;
+      // max-width: 650px;
       text-align: left;
       h3{
         font-size: 48px;
@@ -51,10 +70,16 @@ console.log(jsonData.data);
           -1px  1px 0 black,
           1px  1px 0 black;
         margin-bottom: 30px;
+        @include res('mobile'){
+          font-size: 36px;
+        }
       }
       p{
         font-size: 20px;
         font-weight: 300;
+        @include res('mobile'){
+          font-size: 18px;
+        }
       }
       .button3{
         display: flex;
@@ -88,21 +113,22 @@ console.log(jsonData.data);
     }
     figure{
       img{
-        width: 100%;
+        // width: 100%;
+        width: 500px;
+        height: 500px;
+        object-fit: cover;
         border-radius: 10px;
         box-shadow: 30px 30px 15px 5px rgba(0, 0, 0, 0.25);
         border: 1px solid black;
+        @include res('mobile'){
+          width: 100%;
+        }
       }
     }
   }
 
   .web {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 100px;
-    padding: 20px 0;
+  
   }
   .mobile{
     display: flex;
@@ -114,7 +140,7 @@ console.log(jsonData.data);
 
     figure{
       img{
-        width: 420px;
+        // width: 420px;
       }      
     }
   }

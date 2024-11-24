@@ -22,6 +22,8 @@ export default {
 }
 </script>
 <style lang="scss">
+@import '/src/style/mixins';
+
   .header{
     width: calc(100vw - 50px);
     background-color: white;
@@ -30,8 +32,13 @@ export default {
     justify-content: space-between;
     z-index: 10;
     position: fixed;
-    left: 10px;
     top: 0;
+    left: 0;
+    right: 0;
+    border-bottom: 1px solid black;
+    @include res('mobile'){
+      width: 100%;
+    }
     button{
       background-color: transparent;
       border: none;
