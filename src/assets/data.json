@@ -2,6 +2,7 @@
   "data": [
     {
       "id": "1",
+      "sort":"team",
       "type":"web",
       "title":"해양생물연구센터",
       "type2":"팀 프로젝트 - 반응형 리뉴얼 웹",
@@ -43,6 +44,7 @@
     },
     {
       "id": "2",
+      "sort":"personal",
       "type":"mobile",
       "title":"Account",
       "type2":"개인 프로젝트",
@@ -79,6 +81,7 @@
     },
     {
       "id": "3",
+      "sort":"personal",
       "type":"mobile",
       "title":"todos",
       "type2":"개인 프로젝트",
@@ -120,6 +123,7 @@
     },
     {
       "id": "4",
+      "sort":"team",
       "type":"mobile",
       "title":"SEOUL,W",
       "type2":"팀 프로젝트 - 서울시 공연 정보 웹(PWA)",
@@ -181,6 +185,7 @@
     },
     {
       "id": "5",
+      "sort":"personal",
       "type":"web",
       "title":"Portfolio Website",
       "type2":"개인 프로젝트 - 반응형 웹사이트",

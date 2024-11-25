@@ -78,12 +78,14 @@
         <router-link to="/more"><img src="../assets/icon/double-right-black.svg"/></router-link>
       </section> -->
       <div class="line"></div>
-      <div class="ptype">
-        <button>Team</button> |
-        <button>Personal</button>
-      </div>
+      <nav class="ptype">
+        <button @click="setType('team')" 
+        :class="{active:selectedT=='team'}">Team</button> |
+        <button @click="setType('personal')"
+        :class="{active:selectedT=='personal'}">Personal</button>
+      </nav>
       <ul>
-        <ProjectMap/>
+        <ProjectMap :selectedT="selectedT"/>
       </ul>
     </div>
     <div class="contact" id="contact">
@@ -101,21 +103,33 @@
   <TopButton/>
 </template>
 
-<script>
+<script lang="ts">
 import ProjectMap from '@/components/ProjectMap.vue';
 import TopButton from '@/components/TopButton.vue';
 import HeaderBtn from '@/components/HeaderBtn.vue';
+import { defineComponent, ref } from 'vue';
 
-export default {
+export default defineComponent({
   data () {
     return {
-        publicPath: process.env.BASE_URL
+      publicPath: process.env.BASE_URL,
     }
   },
   components: {
     TopButton,ProjectMap,HeaderBtn
+  },
+  setup(){
+    const selectedT = ref('team');
+    const setType = (type: string) => {
+      selectedT.value = type;
+    };
+    return{
+      selectedT,
+      setType
+      
+    };
   }
-}
+})
 </script>
 
 <style lang="scss">
@@ -133,7 +147,7 @@ export default {
     width: calc(100vw - 50px);
     height: calc(100vh - 50px);
     display: flex;
-    // justify-content: center;
+    justify-content: center;
     align-items: center;
     // background-color: black;
     margin-top: 25px;
@@ -286,23 +300,37 @@ export default {
     .ptype{
       display: flex;
       justify-content: center;
+      align-items: center;
       gap: 20px;
-      padding-top: 20px;
+      padding: 50px 0 10px 0;
+      // background-color: white;
+      backdrop-filter: blur(50px);
+
+      position: sticky;
+      top: -10px;
       button{
         border: none;
+        font-size: 24px;
+        cursor: pointer;
+        background-color: transparent;
+        &.active{ 
+          // background-color: slateblue;
+          color: slateblue;
+          border: none;
+        }
       }
     }
     ul{
       max-width: 1440px;
       margin: 0 auto;
-      padding: 100px 0;
+      padding: 90px 0;
       display: flex;
       flex-direction: column;
       list-style: none;
       gap: 100px;
       align-items: center;
       @include res('mobile'){
-          padding: 10px;
+          padding: 30px;
         }
     }
   }

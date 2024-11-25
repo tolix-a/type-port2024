@@ -1,8 +1,8 @@
 <template>
-  
-  <li v-for="(item, index) in filterData" :key="index">
+  <!-- item.type에 따라 다른 클래스로 map 돌리기 -->
+  <li v-for="(item, index) in data" :key="index" :class="item.type">
     <div>
-      <h3>#{{ index + 1 }} {{ item.title }}</h3>
+      <h3>{{ item.title }}</h3>
       <p>{{ item.type2 }}</p>
       <p>{{ item.date }}</p>
       <br/>
@@ -21,28 +21,16 @@
   </li>
 </template>
 
-<script lang="ts">
+<script>
 import jsonData from '@/assets/data.json';
-import { defineComponent, computed } from 'vue';
 
-export default defineComponent({
+export default {
   data(){
     return{
       data: jsonData.data
     }
-  },
-  props: {
-    selectedT: {
-      type: String,
-      required: true
-    }
-  },
-  computed:{
-    filterData(){
-      return this.data.filter(item => item.sort === this.selectedT);
-    }
   }
-})
+}
 console.log(jsonData.data);
 </script>
 
@@ -136,6 +124,24 @@ console.log(jsonData.data);
           width: 100%;
         }
       }
+    }
+  }
+
+  .web {
+  
+  }
+  .mobile{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+    padding: 20px 0;
+
+    figure{
+      img{
+        // width: 420px;
+      }      
     }
   }
 </style>
