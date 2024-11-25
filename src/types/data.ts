@@ -7,6 +7,7 @@ export interface Trouble {
 
 export interface Project {
   id: string;
+  sort: string;
   type: string;
   title: string;
   type2: string;
@@ -26,7 +27,3 @@ export interface Project {
 export interface Data {
   data: Project[];
 }
-
-// const projects: Data = dataJson;
-
-// console.log(projects);

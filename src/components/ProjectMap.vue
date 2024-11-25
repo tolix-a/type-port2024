@@ -23,12 +23,13 @@
 
 <script lang="ts">
 import jsonData from '@/assets/data.json';
+import { Project } from '@/types/data';
 import { defineComponent, computed } from 'vue';
 
 export default defineComponent({
   data(){
     return{
-      data: jsonData.data
+      data: jsonData.data as Project[]
     }
   },
   props: {
@@ -38,7 +39,7 @@ export default defineComponent({
     }
   },
   computed:{
-    filterData(){
+    filterData(): Project[] {
       return this.data.filter(item => item.sort === this.selectedT);
     }
   }
@@ -131,7 +132,7 @@ console.log(jsonData.data);
         object-fit: cover;
         border-radius: 10px;
         box-shadow: 30px 30px 15px 5px rgba(0, 0, 0, 0.25);
-        border: 1px solid black;
+        // border: 1px solid black;
         @include res('mobile'){
           width: 100%;
         }
