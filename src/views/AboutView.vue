@@ -4,8 +4,8 @@
   <HeaderBtn/>
   <div class="home" id="main">
     <div class="main">
-      <p>FRONTEND<br/>PORTFOLIO</p>
-
+      <p>FRONTEND</p>
+      <p>PORTFOLIO</p>
     </div>
     <div class="about" id="about">
       <h1>About</h1>
@@ -27,7 +27,7 @@
           </figure> -->
           <div>
             <h5>안녕하세요!</h5>
-            <h3>새로운 것에 도전하는 것을 좋아하는 <br/>신입 프론트엔드 네모네모입니다.</h3>
+            <h3>새로운 것에 도전하는 것을 좋아하는 <br/>신입 프론트엔드 고유나입니다.</h3>
             <h5>웹 개발의 매력에 빠져 다양한 기술을 배우고 있으며<br/>
               사용자에게 즐거운 경험을 제공하는 웹사이트를 만들고자 노력하고 있습니다.
             </h5>
@@ -118,6 +118,14 @@ export default defineComponent({
   components: {
     TopButton,ProjectMap,HeaderBtn
   },
+  mounted(){
+    const elP:any = document.querySelectorAll('.main > p')
+    
+    window.addEventListener('scroll',function(){
+      elP[0].style = `transform:translateX(-${window.scrollY}px)`;
+      elP[1].style = `transform:translateX(${window.scrollY}px)`;
+    })
+  },
   setup(){
     const selectedT = ref('team');
     const setType = (type: string) => {
@@ -150,6 +158,7 @@ export default defineComponent({
     height: calc(100vh - 50px);
 
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     // background-color: black;
@@ -247,6 +256,9 @@ export default defineComponent({
           font-weight: 400;
           text-align: center;
           padding-bottom: 20px;
+          @include res('mobile'){
+            padding-bottom: 40px;
+          }
         }
         .skill{
           display: flex;
@@ -340,7 +352,7 @@ export default defineComponent({
       align-items: center;
       @include res('mobile'){
         padding: 15px;
-        gap: 50px;
+        gap: 20px;
       }
     }
   }

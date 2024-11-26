@@ -8,7 +8,7 @@
       <br/>
       <p>{{ item.skill }}</p>
       <br/>
-      <p>{{ item.work }}</p>
+      <p>{{ item.function }}</p>
       <div class="button3">
         <!-- <router-link :to="{name:'Detail', params:{id:item.id}}">상세보기</router-link> -->
         <a :href="item.url" target="_blank" rel="noopener noreferrer">배포링크</a>
@@ -66,6 +66,7 @@ console.log(jsonData.data);
     &:nth-of-type(2n){
       flex-direction: row-reverse;
       div{
+        width: initial;
       }
       figure{
         img{

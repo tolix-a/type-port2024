@@ -1,6 +1,9 @@
 <template>
   <div class='header'>
-    <button><img src="../../public/moon_black.svg"/></button>
+    <!-- <button><img src="../../public/moon_black.svg"/></button> -->
+    <button @click="toggleDarkMode">
+      <img :src="darkMode ? darkImage : lightImage" alt="Theme Toggle" />
+    </button>
     <nav>
       <button @click="toSection('main')">Home</button>
       <button @click="toSection('about')">About</button>
@@ -10,6 +13,7 @@
   </div>
 </template>
 <script>
+import { ref, onMounted } from 'vue';
 export default {
   methods: {
     toSection(sectionId) {
@@ -18,6 +22,39 @@ export default {
         section.scrollIntoView({behavior:'smooth'});
       }
     }
+  },
+
+  setup() {
+    // 다크 모드 상태 관리
+    const darkMode = ref(false);
+
+    // 다크 모드와 라이트 모드 이미지 경로
+    const darkImage = ('/moon_black.svg');
+    const lightImage = ('/moon.svg'); 
+    // const lightImage = require('@/assets/sun_black.svg');
+
+    // 다크 모드 토글 함수
+    const toggleDarkMode = () => {
+      darkMode.value = !darkMode.value;
+      // localStorage에 다크 모드 상태 저장
+      localStorage.setItem('darkMode', darkMode.value);
+      // body에 다크 모드 클래스 적용
+      document.getElementById('app').setAttribute('data-theme', darkMode.value ? 'dark' : 'light');
+    };
+
+    // 초기 다크 모드 상태 로드
+    onMounted(() => {
+      const savedDarkMode = localStorage.getItem('darkMode') === 'true';
+      darkMode.value = savedDarkMode;
+      document.getElementById('app').setAttribute('data-theme', darkMode.value ? 'dark' : 'light');
+    });
+
+    return {
+      darkMode,
+      toggleDarkMode,
+      darkImage,
+      lightImage
+    };
   }
 }
 </script>
