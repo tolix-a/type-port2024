@@ -5,8 +5,7 @@
   <div class="home" id="main">
     <div class="main">
       <p>FRONTEND<br/>PORTFOLIO</p>
-      <!-- <p>FRONTEND<br/>PORTFOLIO</p>
-      <p>FRONTEND<br/>PORTFOLIO</p> -->
+
     </div>
     <div class="about" id="about">
       <h1>About</h1>
@@ -28,7 +27,7 @@
           </figure> -->
           <div>
             <h5>안녕하세요!</h5>
-            <h3>새로운 것에 도전하는 것을 좋아하는<br/>신입 프론트엔드 네모네모입니다.</h3>
+            <h3>새로운 것에 도전하는 것을 좋아하는 <br/>신입 프론트엔드 네모네모입니다.</h3>
             <h5>웹 개발의 매력에 빠져 다양한 기술을 배우고 있으며<br/>
               사용자에게 즐거운 경험을 제공하는 웹사이트를 만들고자 노력하고 있습니다.
             </h5>
@@ -41,32 +40,33 @@
         </div>
         <section>
           <h2>skill</h2>
-          <div>
-            <p>HTML5</p>
-            <p>CSS / SCSS</p>
-            <p>JavaScript</p>
-            <p>React</p>
-            
-          </div>
-          <div>
-            <p>jQuery</p>
-            <p>Next.js</p>
-            <p>Vue.js</p>
-            <p>TypeScript</p>
-          </div>
-          <div>
-            <p>Git</p>
-            <p>Github</p>
-            <p>MongoDB</p>
-            <p>Firebase</p>
-            <p>Vercel</p>
-          </div>
-          <div>
-            <p>Photoshop</p>
-            <p>Illustrator</p>
-            <p>Indesign</p>
-            <p>Figma</p>
-            <p>Notion</p>
+          <div class="skill">
+            <ul>
+              <li>HTML5</li>
+              <li>CSS / SCSS</li>
+              <li>JavaScript</li>
+              <li>React</li>
+            </ul>
+            <ul>
+              <li>jQuery</li>
+              <li>Next.js</li>
+              <li>Vue.js</li>
+              <li>TypeScript</li>
+            </ul>
+            <ul>
+              <li>Git</li>
+              <li>Github</li>
+              <li>MongoDB</li>
+              <li>Firebase</li>
+              <li>Vercel</li>
+            </ul>
+            <ul>
+              <li>Photoshop</li>
+              <li>Illustrator</li>
+              <li>Indesign</li>
+              <li>Figma</li>
+              <li>Notion</li>
+            </ul>
           </div>
         </section>
       </div>
@@ -94,10 +94,10 @@
         <img src="../../public/north-star.svg"/>
         <div class="line"></div>
         <img src="../../public/star-tv.svg"/>
-        <p>email <a href="mailto:apple@gmail.com">@gmail.com</a></p>
+        <p>email <a href="mailto:apple@gmail.com">bluii0157@gmail.com</a></p>
         <p><a href="https://github.com/" target="_blank" rel="noopener noreferrer">github</a></p>
       </article>
-      <p>ⓒ 2024 YK All Rights Reserved</p>
+      <p>ⓒ 2024 YK All Rights Reserved.</p>
     </div>
   </div>
   <TopButton/>
@@ -123,6 +123,8 @@ export default defineComponent({
     const setType = (type: string) => {
       selectedT.value = type;
     };
+
+    
     return{
       selectedT,
       setType
@@ -146,6 +148,7 @@ export default defineComponent({
   .main{
     width: calc(100vw - 50px);
     height: calc(100vh - 50px);
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -163,23 +166,8 @@ export default defineComponent({
       @include res('mobile'){
         font-size: 60px;
       }
-
-      &:nth-of-type(1){
-        // margin-left: 50px;
-      }
-      &:nth-of-type(2){
-        rotate: 180deg;
-        align-self: baseline;
-        color: aquamarine;
-      }
-      &:nth-of-type(3){
-        transform: scaleY(-1);
-        align-self: end;
-        margin-left: -400px;
-        margin-bottom: 50px;
-        color:violet;
-      }
     }
+
   }
   .about{
     display: flex;
@@ -224,6 +212,7 @@ export default defineComponent({
             padding: 5px 0 20px 0;
             @include res('mobile'){
               font-size: 20px;
+              word-break: keep-all;
               br{
                 display: none;
               }
@@ -236,6 +225,7 @@ export default defineComponent({
               padding-bottom: 0;
             }
             @include res('mobile'){
+              text-align: justify;
               br{
                 display: none;
               }
@@ -249,21 +239,33 @@ export default defineComponent({
         // align-items: center;
         justify-content: space-between;
         // flex-direction: column;
+        @include res('mobile'){
+          flex-direction: column;
+        }
         h2{
           font-size: 36px;
           font-weight: 400;
           text-align: center;
           padding-bottom: 20px;
         }
-        div{
+        .skill{
           display: flex;
-          flex-direction: column;
-          gap: 20px;
-          flex-wrap: wrap;
-          p{
-            font-size: 16px;
-            // font-weight: 300;
-            padding-bottom: 10px;
+          gap: 30px;
+          @include res('mobile'){
+            justify-content: space-evenly;
+            gap: 0;
+          }
+          ul{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            flex-wrap: wrap;
+            li{
+              font-size: 16px;
+              font-weight: 300;
+              padding-bottom: 10px;
+              list-style: none;
+            }
           }
         }
       }
@@ -279,6 +281,9 @@ export default defineComponent({
       font-size: 64px;
       font-weight: 300;
       padding: 70px 0;
+      @include res('mobile'){
+        padding: 70px 0 40px 0;
+      }
     }
     >section{
       max-width: 1440px;
@@ -308,6 +313,10 @@ export default defineComponent({
 
       position: sticky;
       top: -10px;
+      @include res('mobile'){
+        padding: 30px 0 5px 0;
+        top: 0;
+      }
       button{
         border: none;
         font-size: 24px;
@@ -330,14 +339,18 @@ export default defineComponent({
       gap: 100px;
       align-items: center;
       @include res('mobile'){
-          padding: 30px;
-        }
+        padding: 15px;
+        gap: 50px;
+      }
     }
   }
 
   .contact{
     background-color: white;
     height: 100vh;
+
+    position: relative;
+    width: 100%;
     >article{
       display: flex;
       flex-direction: column;
@@ -365,10 +378,19 @@ export default defineComponent({
         &:nth-of-type(1){
           margin: 110px 0 38px 0;
         }
+        &:nth-of-type(1){
+          margin: 110px 0 38px 0;
+        }
         a{
           color: black;
         }
       }
+    }
+    >p{
+      position: absolute;
+      bottom: 25px;
+      left: 0;
+      right: 0;
     }
   }
 </style>

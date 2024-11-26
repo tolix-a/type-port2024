@@ -63,16 +63,37 @@ console.log(jsonData.data);
     // flex-wrap: wrap;
     gap: 100px;
     padding: 20px 0;
+    &:nth-of-type(2n){
+      flex-direction: row-reverse;
+      div{
+      }
+      figure{
+        img{
+          box-shadow: -30px 30px 15px 5px rgba(0, 0, 0, 0.25);
+          @include res('mobile'){
+          box-shadow: none;
+          }
+        }
+      }
+      @include res('mobile'){
+      flex-direction: row;
+      }
+    }
     @include res('mobile'){
       flex-wrap: wrap;
       width: 100%;
       height: 100%;
       gap: 0;
     }
+    @include res('tablet'){
+      gap: 30px;
+    }
     div{
-      width: 100%;
-      // max-width: 650px;
+      width: 50%;
       text-align: left;
+      @include res('mobile'){
+        width: 100%;
+      }
       h3{
         font-size: 48px;
         font-weight: 500;
@@ -86,11 +107,17 @@ console.log(jsonData.data);
         @include res('mobile'){
           font-size: 36px;
         }
+        @include res('tablet'){
+          font-size: 36px;
+        }
       }
       p{
         font-size: 20px;
         font-weight: 300;
         @include res('mobile'){
+          font-size: 18px;
+        }
+        @include res('tablet'){
           font-size: 18px;
         }
       }
@@ -125,16 +152,26 @@ console.log(jsonData.data);
       }
     }
     figure{
+      width: 500px;
+      height: 500px;
+      @include res('tablet'){
+        width: 30vw;
+        height: 30vw;
+      }
+      @include res('mobile'){
+        width: 100%;
+        height: 50vw;
+      }
       img{
-        // width: 100%;
-        width: 500px;
-        height: 500px;
+        width: 100%;
+        height: 100%;
         object-fit: cover;
         border-radius: 10px;
         box-shadow: 30px 30px 15px 5px rgba(0, 0, 0, 0.25);
         // border: 1px solid black;
         @include res('mobile'){
-          width: 100%;
+          box-shadow: none;
+          // border: 1px solid black;
         }
       }
     }
