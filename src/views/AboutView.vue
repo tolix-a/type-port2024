@@ -91,9 +91,11 @@
     <div class="contact" id="contact">
       <article>
         <h2>Contact</h2>
-        <img src="../../public/north-star.svg"/>
+        <div class="img1"></div>
+        <!-- <img src="../../public/north-star.svg"/> -->
         <div class="line"></div>
-        <img src="../../public/star-tv.svg"/>
+        <!-- <img src="../../public/star-tv.svg"/> -->
+        <div class="img2"></div>
         <p>email <a href="mailto:apple@gmail.com">bluii0157@gmail.com</a></p>
         <p><a href="https://github.com/" target="_blank" rel="noopener noreferrer">github</a></p>
       </article>
@@ -358,12 +360,10 @@ export default defineComponent({
   }
 
   .contact{
-    background-color: white;
     height: 100vh;
-
     position: relative;
     width: 100%;
-    >article{
+    article{
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -379,14 +379,24 @@ export default defineComponent({
           opacity: 0.6;
         }
       }
+      .img1{
+        width: 24px;
+        height: 24px;
+        background: url("../../public/north-star.svg");
+        opacity: 0.6;
+      }
       .line{
         width: 1px;
         height: 130px;
         border-left: 1px solid black;
         margin: 24px 0;
       }
+      .img2{
+        width: 24px;
+        height: 24px;
+        background: url("../../public/star-tv.svg");
+      }
       p{
-        text-decoration: underline;
         &:nth-of-type(1){
           margin: 110px 0 38px 0;
         }
@@ -395,6 +405,7 @@ export default defineComponent({
         }
         a{
           color: black;
+          text-decoration: underline;
         }
       }
     }

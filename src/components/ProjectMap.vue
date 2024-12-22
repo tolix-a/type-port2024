@@ -24,7 +24,7 @@
 <script lang="ts">
 import jsonData from '@/assets/data.json';
 import { Project } from '@/types/data';
-import { defineComponent, computed } from 'vue';
+import { defineComponent } from 'vue';
 
 export default defineComponent({
   data(){

@@ -29,8 +29,8 @@ export default {
     const darkMode = ref(false);
 
     // 다크 모드와 라이트 모드 이미지 경로
-    const darkImage = ('/moon_black.svg');
-    const lightImage = ('/moon.svg'); 
+    const darkImage = ('/moon.svg');
+    const lightImage = ('/moon_black.svg'); 
     // const lightImage = require('@/assets/sun_black.svg');
 
     // 다크 모드 토글 함수
@@ -39,14 +39,21 @@ export default {
       // localStorage에 다크 모드 상태 저장
       localStorage.setItem('darkMode', darkMode.value);
       // body에 다크 모드 클래스 적용
-      document.getElementById('app').setAttribute('data-theme', darkMode.value ? 'dark' : 'light');
+      // document.getElementById('app').setAttribute('data-theme', darkMode.value ? 'dark' : 'light');
+      document.querySelector('body').setAttribute('data-theme', darkMode.value ? 'dark' : 'light');
     };
+
+    //다크모드 상태 저장한거 지우기 안 지우면 다시 들어왔을 때 다크모드 상태임
+    window.addEventListener('beforeunload', () => {
+      localStorage.removeItem('darkMode');
+    });
 
     // 초기 다크 모드 상태 로드
     onMounted(() => {
       const savedDarkMode = localStorage.getItem('darkMode') === 'true';
       darkMode.value = savedDarkMode;
-      document.getElementById('app').setAttribute('data-theme', darkMode.value ? 'dark' : 'light');
+      // document.getElementById('app').setAttribute('data-theme', darkMode.value ? 'dark' : 'light');
+      document.querySelector('body').setAttribute('data-theme', darkMode.value ? 'dark' : 'light');
     });
 
     return {

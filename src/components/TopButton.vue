@@ -1,6 +1,7 @@
 <template>
   <button class="top" @click="toTop" v-if="showTop">
-    <img src='../../public/up_black.svg'/>
+    <img class="light-image" src='../../public/up_black.svg'/>
+    <img class="dark-image" src="../../public/up.svg"/>
   </button>
 </template>
 <script>
@@ -28,7 +29,7 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
   .top{
     position: fixed;
     bottom: 8%;
@@ -38,5 +39,12 @@ export default {
     cursor: pointer;
     z-index: 10;
     transition: opacity 0.3s ease-in-out;
+
+    .light-image{
+      display: block;
+    }
+    .dark-image{
+      display: none;
+    }
   }
 </style>
