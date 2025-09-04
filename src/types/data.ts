@@ -1,4 +1,3 @@
-import dataJson from '@/assets/data.json';
 
 export interface Trouble {
   h3: string;

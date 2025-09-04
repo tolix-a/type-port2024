@@ -10,7 +10,6 @@
       <br/>
       <p>{{ item.function }}</p>
       <div class="button3">
-        <!-- <router-link :to="{name:'Detail', params:{id:item.id}}">상세보기</router-link> -->
         <a :href="item.url" target="_blank" rel="noopener noreferrer">배포링크</a>
         <a :href="item.git" target="_blank" rel="noopener noreferrer">GitHub</a>
       </div>
@@ -44,7 +43,6 @@ export default defineComponent({
     }
   }
 })
-console.log(jsonData.data);
 </script>
 
 <style lang="scss" scoped>
@@ -52,7 +50,6 @@ console.log(jsonData.data);
 
   li{
     font-family: 'Inter';
-    // width: 100%;
     width: 80%;
     height: 500px;
 
@@ -60,7 +57,6 @@ console.log(jsonData.data);
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    // flex-wrap: wrap;
     gap: 100px;
     padding: 20px 0;
     &:nth-of-type(2n){
@@ -88,6 +84,7 @@ console.log(jsonData.data);
     }
     @include res('tablet'){
       gap: 30px;
+      height: 100%;
     }
     div{
       width: 50%;
@@ -106,7 +103,8 @@ console.log(jsonData.data);
           1px  1px 0 black;
         margin-bottom: 30px;
         @include res('mobile'){
-          font-size: 36px;
+          font-size: 30px;
+          margin-bottom: 20px;
         }
         @include res('tablet'){
           font-size: 36px;
@@ -116,7 +114,7 @@ console.log(jsonData.data);
         font-size: 20px;
         font-weight: 300;
         @include res('mobile'){
-          font-size: 18px;
+          font-size: 16px;
         }
         @include res('tablet'){
           font-size: 18px;
@@ -131,6 +129,7 @@ console.log(jsonData.data);
           font-size: 18px;
           font-weight: bold;
           color: black;
+          word-break: keep-all;
           &:hover{
             color: slateblue;
           }
@@ -141,9 +140,7 @@ console.log(jsonData.data);
         margin-top: 30px;
         font-size: 28px;
         text-decoration: none;
-        // color: rgb(141, 141, 141);
         color: white;
-        // background-color: rgb(0, 0, 0);
         img{
           margin-left: -5px;
           width: 40px;
@@ -169,10 +166,8 @@ console.log(jsonData.data);
         object-fit: cover;
         border-radius: 10px;
         box-shadow: 30px 30px 15px 5px rgba(0, 0, 0, 0.25);
-        // border: 1px solid black;
         @include res('mobile'){
           box-shadow: none;
-          // border: 1px solid black;
         }
       }
     }

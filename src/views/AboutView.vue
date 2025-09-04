@@ -3,31 +3,25 @@
   </div>
   <HeaderBtn/>
   <div class="home" id="main">
-    <div class="main">
-      <p>FRONTEND</p>
-      <p>PORTFOLIO</p>
+    
+    <div class="title">
+      <div class="main up">
+        <p>FRONTEND</p>
+        <p>PORTFOLIO</p>
+      </div>
+      <div class="main">
+        <p>FRONTEND</p>
+        <p>PORTFOLIO</p>
+      </div>
     </div>
+
     <div class="about" id="about">
       <h1>About</h1>
       <div class="info">
         <div class="self">
-          <!-- <figure>
-            <svg width="240" height="240">
-              <defs>
-                <mask id="photo-mask">
-                  <circle cx="120" cy="120" r="100" fill="white"/>
-                </mask>
-              </defs>
-              <image mask="url(#photo-mask)" href="../assets/img/penguin.jpg"
-              width="320" height="240"
-              x="-100"
-              />
-              <circle cx="120" cy="120" r="120" stroke="black" stroke-width="5" fill="none" stroke-dasharray="2, 40" />
-            </svg>
-          </figure> -->
           <div>
-            <h5>안녕하세요!</h5>
-            <h3>새로운 것에 도전하는 것을 좋아하는 <br/>신입 프론트엔드 고유나입니다.</h3>
+            <h5>안녕하세요</h5>
+            <h3>변화의 흐름에 맞출수 있는 순발력과 사고력을 가진 <br/> 프론트엔드 개발자 고유나입니다.</h3>
             <h5>웹 개발의 매력에 빠져 다양한 기술을 배우고 있으며<br/>
               사용자에게 즐거운 경험을 제공하는 웹사이트를 만들고자 노력하고 있습니다.
             </h5>
@@ -35,7 +29,7 @@
               문제를 해결하고 창의적인 아이디어를 실현하는 과정에서 큰 보람을 느끼며,<br/>
               협업을 통해 더 나은 결과물을 만들어가는 것을 즐깁니다.
             </h5>
-            <h5>항상 성장하고 도전하는 자세로, 함께 멋진 프로젝트를 만들어가고 싶습니다!</h5>
+            <h5>항상 성장하고 도전하는 자세로, 함께 멋진 프로젝트를 만들어가고 싶습니다.</h5>
           </div>
         </div>
         <section>
@@ -45,25 +39,26 @@
               <li>HTML5</li>
               <li>CSS / SCSS</li>
               <li>JavaScript</li>
-              <li>React</li>
-            </ul>
-            <ul>
-              <li>jQuery</li>
-              <li>Next.js</li>
-              <li>Vue.js</li>
               <li>TypeScript</li>
             </ul>
             <ul>
+              <li>React</li>
+              <li>Next.js</li>
+              <li>Vue.js</li>
+              <li>jQuery</li>
+            </ul>
+            <ul>
               <li>Git</li>
-              <li>Github</li>
+              <li>GitHub</li>
               <li>MongoDB</li>
               <li>Firebase</li>
               <li>Vercel</li>
+              <li>Postman</li>
             </ul>
             <ul>
               <li>Photoshop</li>
               <li>Illustrator</li>
-              <li>Indesign</li>
+              <li>InDesign</li>
               <li>Figma</li>
               <li>Notion</li>
             </ul>
@@ -73,10 +68,6 @@
     </div>
     <div class="project" id="project">
       <h1>Projects</h1>
-      <!-- <section>
-        <h1>Projects</h1>
-        <router-link to="/more"><img src="../assets/icon/double-right-black.svg"/></router-link>
-      </section> -->
       <div class="line"></div>
       <nav class="ptype">
         <button @click="setType('team')" 
@@ -92,12 +83,10 @@
       <article>
         <h2>Contact</h2>
         <div class="img1"></div>
-        <!-- <img src="../../public/north-star.svg"/> -->
         <div class="line"></div>
-        <!-- <img src="../../public/star-tv.svg"/> -->
         <div class="img2"></div>
-        <p>email <a href="mailto:apple@gmail.com">bluii0157@gmail.com</a></p>
-        <p><a href="https://github.com/" target="_blank" rel="noopener noreferrer">github</a></p>
+        <p>email : <a href="mailto:bluii0157@gmail.com">bluii0157@gmail.com</a></p>
+        <p>github : <a href="https://github.com/tolix-a" target="_blank" rel="noopener noreferrer">https://github.com/tolix-a</a></p>
       </article>
       <p>ⓒ 2024 YK All Rights Reserved.</p>
     </div>
@@ -121,7 +110,7 @@ export default defineComponent({
     TopButton,ProjectMap,HeaderBtn
   },
   mounted(){
-    const elP:any = document.querySelectorAll('.main > p')
+    const elP:any = document.querySelectorAll('.up > p')
     
     window.addEventListener('scroll',function(){
       elP[0].style = `transform:translateX(-${window.scrollY}px)`;
@@ -147,39 +136,59 @@ export default defineComponent({
 <style lang="scss">
 @import '/src/style/mixins';
 
-.home{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 0 25px;
-}
-
-  .main{
-    width: calc(100vw - 50px);
-    height: calc(100vh - 50px);
-
+  .home{
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    // background-color: black;
-    margin-top: 25px;
-    margin-bottom: 25px;
-    overflow: hidden;
+    justify-content: center;
+    padding: 0 25px;
+  }
 
-    // gap: 5%;
-    p{
-      font-size: 156px;
+  .title{
+    position: relative;
+    .up{
+      z-index: 7;
+      position: absolute;
+      gap: 300px;
+      
+      font-weight: 100;
+      letter-spacing: 0.2em;
+      text-shadow: 
+      -1px -1px 0 rgba(255, 255, 255, 0.5),  
+      1px -1px 0 rgba(255, 255, 255, 0.5),
+      -1px  1px 0 rgba(255, 255, 255, 0.5),
+      1px  1px 0 rgba(255, 255, 255, 0.5);
       @include res('tablet'){
-        font-size: 84px;
+        letter-spacing: 0.15em;
       }
       @include res('mobile'){
-        font-size: 60px;
+        letter-spacing: 0.1em;
+        gap: 200px;
       }
     }
-
+    .main{
+      width: calc(100vw - 50px);
+      height: calc(100vh - 50px);
+  
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-top: 25px;
+      margin-bottom: 25px;
+      overflow: hidden;
+      p{
+        font-size: 156px;
+        @include res('tablet'){
+          font-size: 94px;
+        }
+        @include res('mobile'){
+          font-size: 55px;
+        }
+      }
+    }
   }
+
   .about{
     display: flex;
     flex-direction: column;
@@ -190,15 +199,23 @@ export default defineComponent({
       width: 100%;
       height: 100%;
     }
+    @include res('tablet') {
+      height: 100%;
+    }
     h1{
       font-size: 64px;
       font-weight: 300;
       padding-top: 70px;
       padding-bottom: 70px;
+      @include res('mobile'){
+      font-size: 52px;
+      padding-bottom: 60px;
+      }
+      @include res('short'){
+      padding-bottom: 60px;
+      }
     }
     .info{
-      // display: grid;
-      // grid-template-columns: 50% 50%;
       display: flex;
       flex-direction: column;
       gap: 30px;
@@ -211,7 +228,9 @@ export default defineComponent({
         justify-content: center;
         gap: 30px;
         width: 100%;
-        figure{
+        @include res('mobile'){
+        gap: 40px;
+        width: 98%;
         }
         div{
           display: flex;
@@ -219,10 +238,10 @@ export default defineComponent({
           text-align: left;
           font-family: "Aleo";
           h3{
-            font-size: 24px;
+            font-size: 20px;
             padding: 5px 0 20px 0;
             @include res('mobile'){
-              font-size: 20px;
+              font-size: 18px;
               word-break: keep-all;
               br{
                 display: none;
@@ -230,12 +249,14 @@ export default defineComponent({
             }
           }
           h5{
+            font-size: 17px;
             line-height: 28px;
             padding-bottom: 20px;
             &:nth-of-type(1){
               padding-bottom: 0;
             }
             @include res('mobile'){
+              font-size: 16px;
               text-align: justify;
               br{
                 display: none;
@@ -247,9 +268,7 @@ export default defineComponent({
       >section{
         width: 100%;
         display: flex;
-        // align-items: center;
         justify-content: space-between;
-        // flex-direction: column;
         @include res('mobile'){
           flex-direction: column;
         }
@@ -260,6 +279,7 @@ export default defineComponent({
           padding-bottom: 20px;
           @include res('mobile'){
             padding-bottom: 40px;
+            font-size: 32px;
           }
         }
         .skill{
@@ -275,28 +295,36 @@ export default defineComponent({
             gap: 20px;
             flex-wrap: wrap;
             li{
-              font-size: 16px;
+              font-size: 17px;
               font-weight: 300;
               padding-bottom: 10px;
               list-style: none;
+              @include res('mobile'){
+                font-size: 16px;
+              }
             }
           }
         }
       }
     }
   }
+
   .project{
     width: 100%;
     height: 100%;
-    // background-color: lavender;
-    // max-width: 1440px;
-    // height: 100vh;
     h1{
       font-size: 64px;
       font-weight: 300;
       padding: 70px 0;
       @include res('mobile'){
-        padding: 70px 0 40px 0;
+        font-size: 52px;
+        padding: 25% 0 5% 0;
+      }
+      @include res('tablet'){
+        padding: 23% 0 5% 0;
+      }
+      @include res('short'){
+        padding: 10% 0 2% 0;
       }
     }
     >section{
@@ -322,7 +350,7 @@ export default defineComponent({
       align-items: center;
       gap: 20px;
       padding: 50px 0 10px 0;
-      // background-color: white;
+      background-color: #ffffffbf;
       backdrop-filter: blur(50px);
 
       position: sticky;
@@ -337,7 +365,6 @@ export default defineComponent({
         cursor: pointer;
         background-color: transparent;
         &.active{ 
-          // background-color: slateblue;
           color: slateblue;
           border: none;
         }
@@ -353,26 +380,51 @@ export default defineComponent({
       gap: 100px;
       align-items: center;
       @include res('mobile'){
-        padding: 15px;
+        padding: 15px 5px;
         gap: 20px;
+      }
+      @include res('tablet'){
+        padding: 50px 0;
+        gap: 50px;
       }
     }
   }
 
   .contact{
+    width: 100%;
     height: 100vh;
     position: relative;
-    width: 100%;
+    @include res('mobile'){
+      height: 100%;
+    }
+    @include res('tablet'){
+      height: 100%;
+    }
     article{
       display: flex;
       flex-direction: column;
       align-items: center;
       height: 100vh;
+      @include res('mobile'){
+      height: 100%;
+      }
+      @include res('tablet'){
+      height: 100%;
+      }
       h2{
         padding-top: 70px;
         font-size: 32px;
         font-weight: 300;
         margin-bottom: 32px;
+        @include res('mobile'){
+        padding-top: 25%;
+        }
+        @include res('tablet'){
+        padding-top: 23%;
+        }
+        @include res('short'){
+        padding-top: 10%;
+        }
       }
       img{
         &:nth-of-type(1){
@@ -387,9 +439,21 @@ export default defineComponent({
       }
       .line{
         width: 1px;
-        height: 130px;
+        height: 120px;
         border-left: 1px solid black;
         margin: 24px 0;
+        opacity: 0.2;
+        @include res('mobile'){
+          height: 78px;
+          margin: 20px 0;
+        }
+        @include res('tablet'){
+          height: 70px;
+        }
+        @include res('short'){
+          height: 60px;
+          margin: 14px 0;
+        }
       }
       .img2{
         width: 24px;
@@ -398,10 +462,28 @@ export default defineComponent({
       }
       p{
         &:nth-of-type(1){
-          margin: 110px 0 38px 0;
+          margin-top: 110px;
+          @include res('mobile'){
+          margin-top: 60px;
+          }
+          @include res('tablet'){
+          margin-top: 70px;
+          }
+          @include res('short'){
+          margin-top: 50px;
+          }
         }
-        &:nth-of-type(1){
-          margin: 110px 0 38px 0;
+        &:nth-of-type(2){
+          margin: 38px 0 0 0;
+          @include res('mobile'){
+          margin: 25px 0 79% 0;
+          }
+          @include res('tablet'){
+          margin: 38px 0 40% 0;
+          }
+          @include res('short'){
+          margin: 30px 0 20% 0;
+          }
         }
         a{
           color: black;
@@ -414,6 +496,10 @@ export default defineComponent({
       bottom: 25px;
       left: 0;
       right: 0;
+      font-size: 14px;
+      @include res('mobile'){
+        bottom: 4%;
+      }
     }
   }
 </style>

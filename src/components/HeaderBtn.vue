@@ -1,6 +1,5 @@
 <template>
   <div class='header'>
-    <!-- <button><img src="../../public/moon_black.svg"/></button> -->
     <button @click="toggleDarkMode">
       <img :src="darkMode ? darkImage : lightImage" alt="Theme Toggle" />
     </button>
@@ -25,34 +24,24 @@ export default {
   },
 
   setup() {
-    // 다크 모드 상태 관리
     const darkMode = ref(false);
 
-    // 다크 모드와 라이트 모드 이미지 경로
     const darkImage = ('/moon.svg');
     const lightImage = ('/moon_black.svg'); 
-    // const lightImage = require('@/assets/sun_black.svg');
 
-    // 다크 모드 토글 함수
     const toggleDarkMode = () => {
       darkMode.value = !darkMode.value;
-      // localStorage에 다크 모드 상태 저장
       localStorage.setItem('darkMode', darkMode.value);
-      // body에 다크 모드 클래스 적용
-      // document.getElementById('app').setAttribute('data-theme', darkMode.value ? 'dark' : 'light');
       document.querySelector('body').setAttribute('data-theme', darkMode.value ? 'dark' : 'light');
     };
 
-    //다크모드 상태 저장한거 지우기 안 지우면 다시 들어왔을 때 다크모드 상태임
     window.addEventListener('beforeunload', () => {
       localStorage.removeItem('darkMode');
     });
 
-    // 초기 다크 모드 상태 로드
     onMounted(() => {
       const savedDarkMode = localStorage.getItem('darkMode') === 'true';
       darkMode.value = savedDarkMode;
-      // document.getElementById('app').setAttribute('data-theme', darkMode.value ? 'dark' : 'light');
       document.querySelector('body').setAttribute('data-theme', darkMode.value ? 'dark' : 'light');
     });
 
@@ -82,6 +71,10 @@ export default {
     border-bottom: 1px solid black;
     @include res('mobile'){
       width: 100%;
+      padding: 0.5% 0;
+    }
+    @include res('tablet'){
+      padding: 0.3% 0;  
     }
     button{
       background-color: transparent;
@@ -98,6 +91,9 @@ export default {
         font-family: "Aleo", serif;
         font-size: 20px;
         font-weight: 300;
+        @include res('mobile'){
+          font-size: 18px;
+        }
       }
     }
   }
